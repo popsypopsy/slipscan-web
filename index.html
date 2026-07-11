@@ -234,19 +234,19 @@ footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);fo
 </nav>
 
 <div class="ticker">
-  <div class="ticker-item"><span class="ticker-value" style="color:var(--green)">23</span><span class="ticker-label">Total Picks</span></div>
+  <div class="ticker-item"><span class="ticker-value" id="stat-total" style="color:var(--green)">—</span><span class="ticker-label">Total Picks</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item"><span class="ticker-value" style="color:var(--green)">17</span><span class="ticker-label">Won</span></div>
+  <div class="ticker-item"><span class="ticker-value" id="stat-won" style="color:var(--green)">—</span><span class="ticker-label">Won</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item"><span class="ticker-value" style="color:var(--red)">4</span><span class="ticker-label">Lost</span></div>
+  <div class="ticker-item"><span class="ticker-value" id="stat-lost" style="color:var(--red)">—</span><span class="ticker-label">Lost</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item"><span class="ticker-value" style="color:var(--yellow)">2</span><span class="ticker-label">Pending</span></div>
+  <div class="ticker-item"><span class="ticker-value" id="stat-pending" style="color:var(--yellow)">—</span><span class="ticker-label">Pending</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item"><span class="ticker-value" style="color:var(--green)">74%</span><span class="ticker-label">Win Rate</span></div>
+  <div class="ticker-item"><span class="ticker-value" id="stat-winrate" style="color:var(--green)">—</span><span class="ticker-label">Win Rate</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item"><span class="ticker-value" style="color:var(--green)">+11.5u</span><span class="ticker-label">Total Units</span></div>
+  <div class="ticker-item"><span class="ticker-value" id="stat-units" style="color:var(--green)">—</span><span class="ticker-label">Total Units</span></div>
   <div class="ticker-divider"></div>
-  <div class="ticker-item"><span class="ticker-value">Jul 4</span><span class="ticker-label">Last Updated</span></div>
+  <div class="ticker-item"><span class="ticker-value" id="stat-updated">—</span><span class="ticker-label">Last Updated</span></div>
 </div>
 
 <div class="tabs">
@@ -279,85 +279,18 @@ footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);fo
 <div id="view-results" style="display:none">
   <div class="section-header">
     <span class="section-title">Results history</span>
-    <span class="section-date">Last 14 days</span>
+    <span class="section-date">All time · never deleted</span>
   </div>
 
-  <div class="history-row won">
-    <div class="history-info">
-      <div class="history-match">Colombia vs Ghana</div>
-      <div class="history-sub">World Cup · Jul 4 · Under 2.5</div>
-    </div>
-    <div class="history-right">
-      <div class="history-pick">1–0 · FT</div>
-      <div class="history-unit green">+1.0u</div>
-    </div>
-  </div>
-  <div class="history-row lost">
-    <div class="history-info">
-      <div class="history-match">Argentina vs Cape Verde Islands</div>
-      <div class="history-sub">World Cup · Jul 3 · Home/No BTTS</div>
-    </div>
-    <div class="history-right">
-      <div class="history-pick">3–2 · FT</div>
-      <div class="history-unit red">-0.5u</div>
-    </div>
-  </div>
-  <div class="history-row won">
-    <div class="history-info">
-      <div class="history-match">France vs Sweden</div>
-      <div class="history-sub">World Cup · Jun 30 · Over 1.5</div>
-    </div>
-    <div class="history-right">
-      <div class="history-pick">3–0 · FT</div>
-      <div class="history-unit green">+1.0u</div>
-    </div>
-  </div>
-  <div class="history-row won">
-    <div class="history-info">
-      <div class="history-match">Morocco vs Netherlands</div>
-      <div class="history-sub">World Cup · Jun 30 · Under 3.5</div>
-    </div>
-    <div class="history-right">
-      <div class="history-pick">1–1 (Pens) · FT</div>
-      <div class="history-unit green">+1.0u</div>
-    </div>
-  </div>
-  <div class="history-row won">
-    <div class="history-info">
-      <div class="history-match">Norway vs Ivory Coast</div>
-      <div class="history-sub">World Cup · Jun 30 · Under 3.5</div>
-    </div>
-    <div class="history-right">
-      <div class="history-pick">2–1 · FT</div>
-      <div class="history-unit green">+1.0u</div>
-    </div>
-  </div>
-  <div class="history-row lost">
-    <div class="history-info">
-      <div class="history-match">Germany vs Mexico</div>
-      <div class="history-sub">World Cup · Jun 29 · Over 2.5</div>
-    </div>
-    <div class="history-right">
-      <div class="history-pick">0–2 · FT</div>
-      <div class="history-unit red">-1.0u</div>
-    </div>
-  </div>
-  <div class="history-row won">
-    <div class="history-info">
-      <div class="history-match">England vs Nigeria</div>
-      <div class="history-sub">World Cup · Jun 28 · Double Chance 1X</div>
-    </div>
-    <div class="history-right">
-      <div class="history-pick">2–1 · FT</div>
-      <div class="history-unit green">+0.5u</div>
-    </div>
+  <div id="results-container">
+    <div class="no-picks" id="results-loading">Loading results...</div>
   </div>
 
-  <div style="margin-top:20px;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center">
-    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--green)">74%</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Win rate</div></div>
-    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--green)">+11.5u</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Net units</div></div>
-    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600">17/23</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Record</div></div>
-    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--green)">65%</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Min conf</div></div>
+  <div id="results-summary-box" style="display:none;margin-top:20px;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center">
+    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--green)" id="results-winrate">—</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Win rate</div></div>
+    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--green)" id="results-units">—</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Net units</div></div>
+    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600" id="results-record">—</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Record</div></div>
+    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--green)">78%</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Min conf</div></div>
   </div>
 </div>
 
@@ -368,44 +301,8 @@ footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);fo
     <span class="section-date">All time</span>
   </div>
 
-  <div style="display:grid;gap:10px">
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-        <div style="font-family:var(--font-display);font-size:15px;font-weight:600">Over/Under goals</div>
-        <div style="font-family:var(--font-mono);font-size:13px;color:var(--green);font-weight:600">80% · 8/10</div>
-      </div>
-      <div class="conf-bar-track"><div class="conf-bar-fill" style="width:80%;background:var(--green)"></div></div>
-      <div style="font-size:12px;color:var(--muted);margin-top:6px">Best performing market — avg confidence 76%</div>
-    </div>
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-        <div style="font-family:var(--font-display);font-size:15px;font-weight:600">Double Chance</div>
-        <div style="font-family:var(--font-mono);font-size:13px;color:var(--green);font-weight:600">75% · 3/4</div>
-      </div>
-      <div class="conf-bar-track"><div class="conf-bar-fill" style="width:75%;background:var(--green)"></div></div>
-      <div style="font-size:12px;color:var(--muted);margin-top:6px">Strong with heavy favorites — avg confidence 71%</div>
-    </div>
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-        <div style="font-family:var(--font-display);font-size:15px;font-weight:600">BTTS</div>
-        <div style="font-family:var(--font-mono);font-size:13px;color:var(--yellow);font-weight:600">60% · 3/5</div>
-      </div>
-      <div class="conf-bar-track"><div class="conf-bar-fill" style="width:60%;background:var(--yellow)"></div></div>
-      <div style="font-size:12px;color:var(--muted);margin-top:6px">Still gathering data — need more samples</div>
-    </div>
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-        <div style="font-family:var(--font-display);font-size:15px;font-weight:600">Home/Away Win</div>
-        <div style="font-family:var(--font-mono);font-size:13px;color:var(--red);font-weight:600">50% · 2/4</div>
-      </div>
-      <div class="conf-bar-track"><div class="conf-bar-fill" style="width:50%;background:var(--red)"></div></div>
-      <div style="font-size:12px;color:var(--muted);margin-top:6px">Risky — reducing stake or dropping this market</div>
-    </div>
-  </div>
-
-  <div style="margin-top:20px;padding:16px;background:var(--card);border:1px solid rgba(0,232,122,0.12);border-radius:12px">
-    <div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:8px">Edge insight</div>
-    <div style="font-size:13px;color:rgba(238,238,245,0.7);line-height:1.6">Over/Under goals is your strongest market at 80% win rate. Double Chance shows promise at 75%. Focus stakes here — these two markets dey give clear statistical edge. BTTS and straight wins need more samples before increasing stake.</div>
+  <div id="stats-container" style="display:grid;gap:10px">
+    <div class="no-picks" id="stats-loading">Loading stats...</div>
   </div>
 </div>
 
@@ -748,7 +645,7 @@ Bet9ja · 04/07/2026
 <footer>
   <div style="font-weight:600;color:var(--text);margin-bottom:6px">SlipScan Picks</div>
   AI-assisted analysis backed by real match stats. Not financial advice. 18+ only. Bet responsibly.<br>
-  Every result — won or lost — stays on the public record. Always. Min confidence: 65%.
+  Every result — won or lost — stays on the public record. Always. Min confidence to ship: 78%.
 </footer>
 
 <script>
@@ -917,7 +814,7 @@ function renderTodayPicks(data) {
     container.innerHTML =
       '<div class="no-picks">' +
         '<div style="font-size:15px;color:var(--text);margin-bottom:6px">No picks today</div>' +
-        '<div>Nothing cleared our 65% confidence bar. Honest zero — quality over quantity.</div>' +
+        '<div>Nothing cleared our 78% confidence bar, or Claude flagged a risk on everything that did. Honest zero — quality over quantity.</div>' +
       '</div>';
     return;
   }
@@ -948,8 +845,141 @@ function loadTodayPicks() {
     });
 }
 
+function computeOverallStats(history) {
+  var settled = history.filter(function(r) { return r.result === 'WIN' || r.result === 'LOSS' || r.result === 'VOID'; });
+  var wins = settled.filter(function(r) { return r.result === 'WIN'; }).length;
+  var losses = settled.filter(function(r) { return r.result === 'LOSS'; }).length;
+  var pending = history.filter(function(r) { return r.result === 'PENDING'; }).length;
+  var decided = wins + losses;
+  var winRate = decided > 0 ? Math.round((wins / decided) * 100) : null;
+
+  var units = settled.reduce(function(sum, r) {
+    if (r.result === 'WIN') return sum + (r.stake || 0);
+    if (r.result === 'LOSS') return sum - (r.stake || 0);
+    return sum;
+  }, 0);
+
+  var lastUpdated = null;
+  history.forEach(function(r) {
+    var d = r.settled_at || r.logged_at;
+    if (d && (!lastUpdated || d > lastUpdated)) lastUpdated = d;
+  });
+
+  return {
+    total: history.length, wins: wins, losses: losses, pending: pending,
+    winRate: winRate, units: Math.round(units * 10) / 10, lastUpdated: lastUpdated
+  };
+}
+
+function renderTickerStats(stats) {
+  var set = function(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; };
+  set('stat-total', stats.total || '0');
+  set('stat-won', stats.wins || '0');
+  set('stat-lost', stats.losses || '0');
+  set('stat-pending', stats.pending || '0');
+  set('stat-winrate', stats.winRate != null ? stats.winRate + '%' : '—');
+  set('stat-units', (stats.units >= 0 ? '+' : '') + stats.units + 'u');
+  if (stats.lastUpdated) {
+    var d = new Date(stats.lastUpdated);
+    set('stat-updated', d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+  }
+}
+
+function renderResultsTab(history, overall) {
+  var container = document.getElementById('results-container');
+  var summaryBox = document.getElementById('results-summary-box');
+
+  var settled = history.filter(function(r) { return r.result !== 'PENDING'; })
+    .sort(function(a, b) { return (b.settled_at || b.logged_at || '').localeCompare(a.settled_at || a.logged_at || ''); });
+
+  if (!settled.length) {
+    container.innerHTML = '<div class="no-picks"><div style="font-size:15px;color:var(--text);margin-bottom:6px">No settled results yet</div><div>Check back once today\'s picks finish — every result, won or lost, stays here permanently.</div></div>';
+    summaryBox.style.display = 'none';
+    return;
+  }
+
+  container.innerHTML = settled.map(function(r) {
+    var cls = r.result === 'WIN' ? 'won' : (r.result === 'LOSS' ? 'lost' : 'pending');
+    var unitDisplay = r.result === 'WIN' ? '+' + r.stake + 'u' : (r.result === 'LOSS' ? '-' + r.stake + 'u' : '±0u');
+    var unitColor = r.result === 'WIN' ? 'green' : (r.result === 'LOSS' ? 'red' : '');
+    var dateStr = (r.settled_at || r.logged_at || '').slice(0, 10);
+    return '<div class="history-row ' + cls + '">' +
+      '<div class="history-info">' +
+        '<div class="history-match">' + esc(r.match) + '</div>' +
+        '<div class="history-sub">' + esc(dateStr) + ' · ' + esc(r.market_name) + ' — ' + esc(r.side) + '</div>' +
+      '</div>' +
+      '<div class="history-right">' +
+        '<div class="history-pick">' + esc(r.result) + '</div>' +
+        '<div class="history-unit ' + unitColor + '">' + unitDisplay + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  document.getElementById('results-winrate').textContent = overall.winRate != null ? overall.winRate + '%' : '—';
+  document.getElementById('results-units').textContent = (overall.units >= 0 ? '+' : '') + overall.units + 'u';
+  document.getElementById('results-record').textContent = overall.wins + '/' + (overall.wins + overall.losses);
+  summaryBox.style.display = 'grid';
+}
+
+function renderStatsTab(history) {
+  var container = document.getElementById('stats-container');
+  var settled = history.filter(function(r) { return r.result === 'WIN' || r.result === 'LOSS'; });
+
+  if (!settled.length) {
+    container.innerHTML = '<div class="no-picks"><div style="font-size:15px;color:var(--text);margin-bottom:6px">Not enough data yet</div><div>Market breakdown appears once picks start settling. No fake numbers here in the meantime.</div></div>';
+    return;
+  }
+
+  var byMarket = {};
+  settled.forEach(function(r) {
+    var key = r.market_name || 'Unknown';
+    if (!byMarket[key]) byMarket[key] = { wins: 0, total: 0 };
+    byMarket[key].total++;
+    if (r.result === 'WIN') byMarket[key].wins++;
+  });
+
+  var rows = Object.keys(byMarket).map(function(name) {
+    var m = byMarket[name];
+    var rate = Math.round((m.wins / m.total) * 100);
+    var color = rate >= 70 ? 'var(--green)' : (rate >= 50 ? 'var(--yellow)' : 'var(--red)');
+    return { name: name, rate: rate, wins: m.wins, total: m.total, color: color };
+  }).sort(function(a, b) { return b.rate - a.rate; });
+
+  container.innerHTML = rows.map(function(r) {
+    return '<div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">' +
+        '<div style="font-family:var(--font-display);font-size:15px;font-weight:600">' + esc(r.name) + '</div>' +
+        '<div style="font-family:var(--font-mono);font-size:13px;color:' + r.color + ';font-weight:600">' + r.rate + '% · ' + r.wins + '/' + r.total + '</div>' +
+      '</div>' +
+      '<div class="conf-bar-track"><div class="conf-bar-fill" style="width:' + r.rate + '%;background:' + r.color + '"></div></div>' +
+    '</div>';
+  }).join('');
+}
+
+function loadHistory() {
+  fetch('./data/history.json', { cache: 'no-store' })
+    .then(function(r) {
+      if (!r.ok) throw new Error('history.json not found (' + r.status + ')');
+      return r.json();
+    })
+    .then(function(history) {
+      var overall = computeOverallStats(history);
+      renderTickerStats(overall);
+      renderResultsTab(history, overall);
+      renderStatsTab(history);
+    })
+    .catch(function(err) {
+      renderTickerStats({ total: 0, wins: 0, losses: 0, pending: 0, winRate: null, units: 0 });
+      var resultsContainer = document.getElementById('results-container');
+      if (resultsContainer) resultsContainer.innerHTML = '<div class="no-picks">Could not load results history: ' + esc(err.message) + '</div>';
+      var statsContainer = document.getElementById('stats-container');
+      if (statsContainer) statsContainer.innerHTML = '<div class="no-picks">Could not load stats: ' + esc(err.message) + '</div>';
+    });
+}
+
 window.onload = function() {
   loadTodayPicks();
+  loadHistory();
   document.querySelectorAll('.conf-bar-fill').forEach(function(bar) {
     var w = bar.style.width;
     bar.style.width = '0';
