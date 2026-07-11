@@ -1,0 +1,452 @@
+[
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 94.14,
+    "stake": 1.5,
+    "match": "Houston Dynamo 2 vs Saint Louis City SC 2",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:49:49.428405+00:00"
+  },
+  {
+    "market_id": "corners_8.5",
+    "market_name": "Over/Under 8.5 Corners",
+    "side": "Over",
+    "predicted_confidence": 87.29,
+    "stake": 1.5,
+    "match": "Houston Dynamo 2 vs Saint Louis City SC 2",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:49:49.433397+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 84.08,
+    "stake": 1.0,
+    "match": "Houston Dynamo 2 vs Saint Louis City SC 2",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:49:49.436389+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 93.58,
+    "stake": 1.5,
+    "match": "Crown Legacy FC vs New York City FC II",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:50:31.627143+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 88.54,
+    "stake": 1.5,
+    "match": "Crown Legacy FC vs New York City FC II",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:50:31.629137+00:00"
+  },
+  {
+    "market_id": "corners_8.5",
+    "market_name": "Over/Under 8.5 Corners",
+    "side": "Over",
+    "predicted_confidence": 81.4,
+    "stake": 1.0,
+    "match": "Crown Legacy FC vs New York City FC II",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:50:31.632129+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 90.84,
+    "stake": 1.5,
+    "match": "Chengdu Rongcheng vs Chongqing Tonglianglong FC",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:17.223454+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 78.04,
+    "stake": 1.0,
+    "match": "Chengdu Rongcheng vs Chongqing Tonglianglong FC",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:17.227444+00:00"
+  },
+  {
+    "market_id": "dc_1x",
+    "market_name": "Double Chance 1X",
+    "side": "1X",
+    "predicted_confidence": 77.57,
+    "stake": 1.0,
+    "match": "Chengdu Rongcheng vs Chongqing Tonglianglong FC",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:17.235422+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 93.04,
+    "stake": 1.5,
+    "match": "Shenzhen Peng vs Qingdao West Coast",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:24.785791+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 79.68,
+    "stake": 1.0,
+    "match": "Shenzhen Peng vs Qingdao West Coast",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:24.788781+00:00"
+  },
+  {
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "side": "12",
+    "predicted_confidence": 75.67,
+    "stake": 1.0,
+    "match": "Shenzhen Peng vs Qingdao West Coast",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:24.790775+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 89.26,
+    "stake": 1.5,
+    "match": "Shanghai Shenhua vs Beijing",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:31.351534+00:00"
+  },
+  {
+    "market_id": "corners_8.5",
+    "market_name": "Over/Under 8.5 Corners",
+    "side": "Over",
+    "predicted_confidence": 89.07,
+    "stake": 1.5,
+    "match": "Shanghai Shenhua vs Beijing",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:31.353530+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 87.11,
+    "stake": 1.5,
+    "match": "Shanghai Shenhua vs Beijing",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:31.356520+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 92.98,
+    "stake": 1.5,
+    "match": "Zhejiang Gt. vs Qingdao Hainiu",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:38.323620+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 82.22,
+    "stake": 1.0,
+    "match": "Zhejiang Gt. vs Qingdao Hainiu",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:38.326613+00:00"
+  },
+  {
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "side": "12",
+    "predicted_confidence": 76.43,
+    "stake": 1.0,
+    "match": "Zhejiang Gt. vs Qingdao Hainiu",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:38.335600+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 92.63,
+    "stake": 1.5,
+    "match": "Wuhan Three Towns vs Henan",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:43.103984+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 80.14,
+    "stake": 1.0,
+    "match": "Wuhan Three Towns vs Henan",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:43.107974+00:00"
+  },
+  {
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "side": "12",
+    "predicted_confidence": 75.73,
+    "stake": 1.0,
+    "match": "Wuhan Three Towns vs Henan",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:43.109968+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 84.97,
+    "stake": 1.0,
+    "match": "Fredrikstad vs Lillestrom",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:46.988814+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 79.83,
+    "stake": 1.0,
+    "match": "Fredrikstad vs Lillestrom",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:46.991805+00:00"
+  },
+  {
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "side": "12",
+    "predicted_confidence": 76.11,
+    "stake": 1.0,
+    "match": "Fredrikstad vs Lillestrom",
+    "result": "PENDING",
+    "logged_at": "2026-07-10T23:58:46.995484+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 94.14,
+    "stake": 1.5,
+    "match": "Houston Dynamo 2 vs Saint Louis City SC 2",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:09.546389+00:00"
+  },
+  {
+    "market_id": "corners_8.5",
+    "market_name": "Over/Under 8.5 Corners",
+    "side": "Over",
+    "predicted_confidence": 87.29,
+    "stake": 1.5,
+    "match": "Houston Dynamo 2 vs Saint Louis City SC 2",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:09.549381+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 84.08,
+    "stake": 1.0,
+    "match": "Houston Dynamo 2 vs Saint Louis City SC 2",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:09.552373+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 93.58,
+    "stake": 1.5,
+    "match": "Crown Legacy FC vs New York City FC II",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:12.319323+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 88.54,
+    "stake": 1.5,
+    "match": "Crown Legacy FC vs New York City FC II",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:12.324309+00:00"
+  },
+  {
+    "market_id": "corners_8.5",
+    "market_name": "Over/Under 8.5 Corners",
+    "side": "Over",
+    "predicted_confidence": 81.4,
+    "stake": 1.0,
+    "match": "Crown Legacy FC vs New York City FC II",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:12.334300+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 90.84,
+    "stake": 1.5,
+    "match": "Chengdu Rongcheng vs Chongqing Tonglianglong FC",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:55.818869+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 78.04,
+    "stake": 1.0,
+    "match": "Chengdu Rongcheng vs Chongqing Tonglianglong FC",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:55.834829+00:00"
+  },
+  {
+    "market_id": "dc_1x",
+    "market_name": "Double Chance 1X",
+    "side": "1X",
+    "predicted_confidence": 77.57,
+    "stake": 1.0,
+    "match": "Chengdu Rongcheng vs Chongqing Tonglianglong FC",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:55.845789+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 93.04,
+    "stake": 1.5,
+    "match": "Shenzhen Peng vs Qingdao West Coast",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:58.425217+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 79.68,
+    "stake": 1.0,
+    "match": "Shenzhen Peng vs Qingdao West Coast",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:58.443112+00:00"
+  },
+  {
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "side": "12",
+    "predicted_confidence": 75.67,
+    "stake": 1.0,
+    "match": "Shenzhen Peng vs Qingdao West Coast",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:24:58.453073+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 89.26,
+    "stake": 1.5,
+    "match": "Shanghai Shenhua vs Beijing",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:25:01.065969+00:00"
+  },
+  {
+    "market_id": "corners_8.5",
+    "market_name": "Over/Under 8.5 Corners",
+    "side": "Over",
+    "predicted_confidence": 89.07,
+    "stake": 1.5,
+    "match": "Shanghai Shenhua vs Beijing",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:25:01.082924+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 87.11,
+    "stake": 1.5,
+    "match": "Shanghai Shenhua vs Beijing",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:25:01.093895+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 92.98,
+    "stake": 1.5,
+    "match": "Zhejiang Gt. vs Qingdao Hainiu",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:25:03.972156+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 82.22,
+    "stake": 1.0,
+    "match": "Zhejiang Gt. vs Qingdao Hainiu",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:25:03.976148+00:00"
+  },
+  {
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "side": "12",
+    "predicted_confidence": 76.43,
+    "stake": 1.0,
+    "match": "Zhejiang Gt. vs Qingdao Hainiu",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:25:03.979139+00:00"
+  },
+  {
+    "market_id": "cards_1.5",
+    "market_name": "Over/Under 1.5 Cards",
+    "side": "Over",
+    "predicted_confidence": 92.63,
+    "stake": 1.5,
+    "match": "Wuhan Three Towns vs Henan",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:25:06.455587+00:00"
+  },
+  {
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "side": "Over",
+    "predicted_confidence": 80.14,
+    "stake": 1.0,
+    "match": "Wuhan Three Towns vs Henan",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:25:06.471492+00:00"
+  },
+  {
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "side": "12",
+    "predicted_confidence": 75.73,
+    "stake": 1.0,
+    "match": "Wuhan Three Towns vs Henan",
+    "result": "PENDING",
+    "logged_at": "2026-07-11T06:25:06.488489+00:00"
+  }
+]
