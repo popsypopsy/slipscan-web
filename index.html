@@ -144,13 +144,16 @@ main{max-width:700px;margin:0 auto;padding:24px 20px 80px}
 .no-picks{text-align:center;padding:40px 20px;color:var(--muted)}
 .no-picks svg{margin:0 auto 12px;display:block;opacity:0.3}
 
-.tg-cta{margin-top:36px;background:linear-gradient(135deg,#0d1b2e 0%,#0a1628 100%);border:1px solid rgba(59,130,246,0.18);border-radius:16px;padding:28px 24px;text-align:center}
-.tg-cta h3{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:8px;letter-spacing:-0.3px}
-.tg-cta p{color:rgba(238,238,245,0.55);font-size:14px;max-width:360px;margin:0 auto 20px;line-height:1.6}
-.tg-btn{display:inline-flex;align-items:center;gap:8px;background:#2AABEE;color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;border:none;transition:opacity 0.2s}
+.tg-cta{margin-top:36px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;position:relative;overflow:hidden}
+.tg-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,var(--green-dim) 0%,transparent 60%);pointer-events:none}
+.tg-cta h3{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:8px;letter-spacing:-0.3px;position:relative}
+.tg-cta p{color:rgba(238,238,245,0.55);font-size:14px;max-width:360px;margin:0 auto 20px;line-height:1.6;position:relative}
+.tg-btn{display:inline-flex;align-items:center;gap:8px;background:#2AABEE;color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;border:none;transition:opacity 0.2s;position:relative}
 .tg-btn:hover{opacity:0.88}
-.tg-plans{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;text-align:left}
-.tg-plan{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:14px}
+.tg-plans{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;text-align:left;position:relative}
+.tg-plan{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:14px;position:relative}
+.tg-plan.recommended{border-color:rgba(0,232,122,0.3);background:var(--green-dim)}
+.tg-plan-badge{position:absolute;top:-9px;right:12px;background:var(--green);color:#000;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:2px 8px;border-radius:20px}
 .tg-plan-name{font-family:var(--font-display);font-weight:600;font-size:14px;margin-bottom:3px}
 .tg-plan-price{font-family:var(--font-mono);font-size:19px;font-weight:600;color:var(--green);margin-bottom:6px}
 .tg-plan-features{font-size:12px;color:var(--muted);line-height:1.8}
@@ -328,9 +331,13 @@ footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);fo
 
 <!-- JOIN TAB -->
 <div id="view-join" style="display:none">
+  <div class="section-header">
+    <span class="section-title">Join Pro</span>
+    <span class="section-date">Quality over quantity</span>
+  </div>
   <div class="tg-cta" style="margin-top:0">
     <h3>Get picks before kickoff</h3>
-    <p>Free channel for teasers. Pro group for full AI analysis — stats, confidence, reasoning, bookmaker recommendation, and unit stake on every pick.</p>
+    <p>Free channel for a daily teaser. Pro group for the full breakdown — real stats, confidence, AI-checked reasoning, and unit stake on every pick.</p>
     <button class="tg-btn">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.247l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.54 14.46l-2.95-.924c-.642-.2-.654-.642.136-.953l11.52-4.44c.537-.194 1.006.131.316.104z"/></svg>
       Join Free Channel
@@ -342,16 +349,16 @@ footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);fo
         <div class="tg-plan-features">
           1 teaser pick daily<br>
           Public results only<br>
-          World Cup coverage
+          No reasoning shown
         </div>
       </div>
-      <div class="tg-plan" style="border-color:rgba(0,232,122,0.25)">
+      <div class="tg-plan recommended">
+        <div class="tg-plan-badge">Best value</div>
         <div class="tg-plan-name">⚡ Pro group</div>
         <div class="tg-plan-price">₦2,500<span style="font-size:12px;color:var(--muted)">/mo</span></div>
         <div class="tg-plan-features">
-          All picks + stats backing<br>
-          2 picks per match<br>
-          Bookmaker recommendation<br>
+          Up to 5 picks daily, ranked by confidence<br>
+          Full AI reasoning + risk notes<br>
           Unit stake guidance<br>
           Multi-league coverage
         </div>
@@ -507,7 +514,11 @@ function renderTodayPicks(data) {
   if (!picks.length) {
     container.innerHTML =
       '<div class="no-picks">' +
-        '<div style="font-size:15px;color:var(--text);margin-bottom:6px">No picks today</div>' +
+        '<div class="signal-meter" style="justify-content:center;max-width:160px;margin:0 auto 18px">' +
+          '<div class="signal-bar"></div><div class="signal-bar"></div><div class="signal-bar"></div><div class="signal-bar"></div>' +
+          '<div class="signal-bar"></div><div class="signal-bar"></div><div class="signal-bar"></div><div class="signal-bar"></div>' +
+        '</div>' +
+        '<div style="font-size:15px;color:var(--text);margin-bottom:6px">No signal today</div>' +
         '<div>Nothing cleared our 78% confidence bar, or Claude flagged a risk on everything that did. Honest zero — quality over quantity.</div>' +
       '</div>';
     return;
