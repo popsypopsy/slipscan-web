@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SlipScan Picks</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07070E;--surface:#10101A;--card:#171722;
+  --green:#00E87A;--green-dim:rgba(0,232,122,0.1);--green-mid:rgba(0,232,122,0.18);
+  --red:#FF4156;--red-dim:rgba(255,65,86,0.1);
+  --yellow:#FFB800;--yellow-dim:rgba(255,184,0,0.1);
+  --blue:#3B82F6;--blue-dim:rgba(59,130,246,0.12);
+  --purple:#A78BFA;--purple-dim:rgba(167,139,250,0.1);
+  --text:#EEEEF5;--muted:#5A5A72;--border:rgba(255,255,255,0.06);
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(7,7,14,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 20px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-display);font-weight:700;font-size:17px;display:flex;align-items:center;gap:8px;letter-spacing:-0.3px}
+.logo-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.75)}}
+.nav-links{display:flex;gap:6px;align-items:center}
+.nav-link{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:6px 12px;border-radius:6px;cursor:pointer;transition:all 0.15s;border:none;background:none}
+.nav-link:hover,.nav-link.active{color:var(--text);background:rgba(255,255,255,0.06)}
+.nav-cta{background:var(--green);color:#000;padding:7px 14px;border-radius:6px;font-weight:600;font-size:13px;cursor:pointer;border:none;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
+
+.ticker{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;gap:28px;overflow-x:auto;scrollbar-width:none}
+.ticker::-webkit-scrollbar{display:none}
+.ticker-item{display:flex;flex-direction:column;align-items:center;min-width:fit-content;gap:2px}
+.ticker-value{font-family:var(--font-mono);font-size:19px;font-weight:600;line-height:1}
+.ticker-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted)}
+.ticker-divider{width:1px;background:var(--border);align-self:stretch;min-width:1px}
+
+.tabs{display:flex;gap:4px;padding:20px 20px 0;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:56px;z-index:50}
+.tab{padding:10px 16px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s;background:none;border-top:none;border-left:none;border-right:none}
+.tab.active{color:var(--text);border-bottom-color:var(--green)}
+.tab:hover{color:var(--text)}
+
+main{max-width:700px;margin:0 auto;padding:24px 20px 80px}
+
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.section-title{font-family:var(--font-display);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.section-title::before{content:'';display:block;width:3px;height:14px;background:var(--green);border-radius:2px}
+.section-date{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+
+.pick-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;cursor:pointer;transition:border-color 0.2s}
+.pick-card:hover{border-color:rgba(255,255,255,0.1)}
+.pick-card.won{border-left:3px solid var(--green)}
+.pick-card.lost{border-left:3px solid var(--red)}
+.pick-card.pending{border-left:3px solid var(--yellow)}
+.pick-card.live{border-left:3px solid var(--blue)}
+.pick-card.skip{border-left:3px solid var(--muted);opacity:0.6}
+
+.pick-main{padding:16px 18px;position:relative}
+.pick-card.won .pick-main::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--green-dim) 0%,transparent 55%);pointer-events:none}
+.pick-card.lost .pick-main::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--red-dim) 0%,transparent 55%);pointer-events:none}
+.pick-card.pending .pick-main::before,.pick-card.live .pick-main::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--yellow-dim) 0%,transparent 55%);pointer-events:none}
+
+.pick-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+.pick-meta{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);margin-bottom:5px;display:flex;align-items:center;gap:8px}
+.pick-match{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-0.2px;line-height:1.3}
+.pick-time{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-top:4px;display:flex;align-items:center;gap:6px}
+.live-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;display:inline-block;animation:pulse 1.5s infinite}
+
+.badge{flex-shrink:0;padding:5px 10px;border-radius:6px;font-family:var(--font-mono);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+.badge-won{background:var(--green-mid);color:var(--green)}
+.badge-lost{background:var(--red-dim);color:var(--red)}
+.badge-live{background:var(--blue-dim);color:var(--blue)}
+.badge-pending{background:var(--yellow-dim);color:var(--yellow)}
+.badge-skip{background:rgba(90,90,114,0.2);color:var(--muted)}
+
+.pick-pills{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-top:12px;border-top:1px solid var(--border)}
+.pill{display:flex;flex-direction:column;gap:2px}
+.pill-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.7px;color:var(--muted)}
+.pill-value{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--text)}
+.pill-value.green{color:var(--green)}
+.pill-value.red{color:var(--red)}
+.pill-value.yellow{color:var(--yellow)}
+.pill-value.blue{color:var(--blue)}
+
+.conf-bar-wrap{margin-top:10px}
+.conf-bar-track{height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden}
+.conf-bar-fill{height:100%;border-radius:2px;transition:width 0.6s ease}
+
+.pick-expanded{display:none;padding:0 18px 16px;border-top:1px solid var(--border);margin-top:0}
+.pick-expanded.open{display:block}
+
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;margin-top:14px}
+.stat-box{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.stat-box-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.7px;color:var(--muted);margin-bottom:8px}
+.stat-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:3px 0}
+.stat-row span:first-child{color:rgba(238,238,245,0.55)}
+.stat-row span:last-child{font-family:var(--font-mono);font-weight:600;color:var(--text)}
+.stat-row span.green{color:var(--green)}
+.stat-row span.red{color:var(--red)}
+
+.reasoning-box{background:rgba(0,232,122,0.05);border:1px solid rgba(0,232,122,0.12);border-radius:10px;padding:12px 14px;font-size:13px;color:rgba(238,238,245,0.75);line-height:1.6;margin-bottom:12px}
+.reasoning-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--green);margin-bottom:6px}
+
+.pick2-box{background:var(--purple-dim);border:1px solid rgba(167,139,250,0.15);border-radius:10px;padding:12px 14px;margin-bottom:12px}
+.pick2-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--purple);margin-bottom:8px}
+.pick2-content{display:flex;align-items:center;justify-content:space-between}
+.pick2-name{font-family:var(--font-display);font-weight:600;font-size:15px}
+.pick2-meta{display:flex;gap:12px;font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+
+.bookmaker-row{display:flex;gap:8px;flex-wrap:wrap}
+.bookie-tag{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.15s}
+.bookie-tag:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.15)}
+.bookie-tag.best{border-color:var(--green);color:var(--green)}
+
+.score-result{display:flex;align-items:center;gap:10px;margin-top:10px;padding:10px 12px;background:rgba(255,255,255,0.03);border-radius:8px}
+.score-result .score-val{font-family:var(--font-mono);font-size:18px;font-weight:600}
+.score-result .score-label{font-size:12px;color:var(--muted)}
+.score-result .verdict{font-size:12px;font-weight:600;margin-left:auto}
+
+.no-picks{text-align:center;padding:40px 20px;color:var(--muted)}
+.no-picks svg{margin:0 auto 12px;display:block;opacity:0.3}
+
+.tg-cta{margin-top:36px;background:linear-gradient(135deg,#0d1b2e 0%,#0a1628 100%);border:1px solid rgba(59,130,246,0.18);border-radius:16px;padding:28px 24px;text-align:center}
+.tg-cta h3{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:8px;letter-spacing:-0.3px}
+.tg-cta p{color:rgba(238,238,245,0.55);font-size:14px;max-width:360px;margin:0 auto 20px;line-height:1.6}
+.tg-btn{display:inline-flex;align-items:center;gap:8px;background:#2AABEE;color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;border:none;transition:opacity 0.2s}
+.tg-btn:hover{opacity:0.88}
+.tg-plans{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;text-align:left}
+.tg-plan{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:14px}
+.tg-plan-name{font-family:var(--font-display);font-weight:600;font-size:14px;margin-bottom:3px}
+.tg-plan-price{font-family:var(--font-mono);font-size:19px;font-weight:600;color:var(--green);margin-bottom:6px}
+.tg-plan-features{font-size:12px;color:var(--muted);line-height:1.8}
+
+.section-gap{margin-top:36px}
+
+.history-row{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+.history-row.won{border-left:3px solid var(--green)}
+.history-row.lost{border-left:3px solid var(--red)}
+.history-info{flex:1}
+.history-match{font-size:14px;font-weight:500}
+.history-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.history-right{text-align:right}
+.history-pick{font-family:var(--font-mono);font-size:12px;font-weight:600;margin-bottom:2px}
+.history-unit{font-size:12px}
+.history-unit.green{color:var(--green)}
+.history-unit.red{color:var(--red)}
+
+.skip-notice{font-size:12px;color:var(--muted);padding:10px 14px;background:rgba(255,255,255,0.02);border-radius:8px;margin-top:6px}
+
+footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.9}
+
+
+.scan-box{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px}
+.scan-box h3{font-family:var(--font-display);font-size:16px;font-weight:600;margin-bottom:6px}
+.scan-box p{font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6}
+.scan-textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:14px;color:var(--text);font-family:var(--font-mono);font-size:12px;line-height:1.7;resize:vertical;min-height:140px;transition:border-color 0.2s}
+.scan-textarea:focus{outline:none;border-color:rgba(0,232,122,0.35)}
+.scan-textarea::placeholder{color:var(--muted)}
+.scan-btn{margin-top:12px;width:100%;background:var(--green);color:#000;border:none;padding:13px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;transition:opacity 0.2s;font-family:var(--font-display)}
+.scan-btn:hover{opacity:0.88}
+.scan-btn:disabled{opacity:0.4;cursor:not-allowed}
+.upload-zone{border:1.5px dashed rgba(255,255,255,0.12);border-radius:10px;padding:28px;text-align:center;cursor:pointer;transition:all 0.2s;margin-bottom:12px}
+.upload-zone:hover{border-color:rgba(0,232,122,0.3);background:rgba(0,232,122,0.03)}
+.upload-zone input{display:none}
+.upload-icon{font-size:28px;margin-bottom:8px}
+.upload-text{font-size:13px;color:var(--muted)}
+.upload-text strong{color:var(--text)}
+.divider-or{display:flex;align-items:center;gap:12px;margin:16px 0;color:var(--muted);font-size:12px}
+.divider-or::before,.divider-or::after{content:'';flex:1;height:1px;background:var(--border)}
+.bookie-select{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.bookie-btn{padding:7px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.15s;color:var(--muted)}
+.bookie-btn.selected{border-color:var(--green);color:var(--green);background:var(--green-dim)}
+.result-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.result-header{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+.result-header:hover{background:rgba(255,255,255,0.02)}
+.result-match{font-family:var(--font-display);font-size:15px;font-weight:600}
+.result-sub{font-size:12px;color:var(--muted);margin-top:3px}
+.result-verdict{flex-shrink:0;padding:5px 12px;border-radius:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+.verdict-keep{background:var(--green-mid);color:var(--green)}
+.verdict-risky{background:var(--yellow-dim);color:var(--yellow)}
+.verdict-drop{background:var(--red-dim);color:var(--red)}
+.verdict-nodata{background:rgba(90,90,114,0.15);color:var(--muted)}
+.result-body{padding:0 18px 16px;border-top:1px solid var(--border)}
+.result-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.result-stat{background:rgba(255,255,255,0.03);border-radius:8px;padding:10px 12px}
+.result-stat-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.7px;color:var(--muted);margin-bottom:4px}
+.result-stat-rows .stat-row{font-size:12px;display:flex;justify-content:space-between;padding:2px 0}
+.result-stat-rows .stat-row span:first-child{color:rgba(238,238,245,0.5)}
+.result-stat-rows .stat-row span:last-child{font-family:var(--font-mono);font-weight:600}
+.result-reasoning{background:rgba(255,255,255,0.03);border-radius:8px;padding:12px 14px;font-size:13px;color:rgba(238,238,245,0.7);line-height:1.6;margin-bottom:12px}
+.result-reasoning-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
+.summary-box{background:linear-gradient(135deg,rgba(0,232,122,0.08) 0%,rgba(0,232,122,0.02) 100%);border:1px solid rgba(0,232,122,0.15);border-radius:14px;padding:20px 22px;margin-top:20px}
+.summary-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:var(--green);margin-bottom:14px}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.summary-stat{text-align:center}
+.summary-stat-val{font-family:var(--font-mono);font-size:22px;font-weight:600;line-height:1}
+.summary-stat-label{font-size:11px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:0.6px}
+.cleaner-slip{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:14px}
+.cleaner-slip-title{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-bottom:10px}
+.cleaner-leg{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px}
+.cleaner-leg:last-child{border-bottom:none}
+.cleaner-leg-match{flex:1;font-weight:500}
+.cleaner-leg-pick{font-family:var(--font-mono);font-size:12px;color:var(--green)}
+.cleaner-leg-conf{font-size:11px;color:var(--muted)}
+.scanning-state{text-align:center;padding:40px 20px}
+.scanning-dot{width:10px;height:10px;background:var(--green);border-radius:50%;display:inline-block;animation:pulse 0.8s infinite;margin:0 3px}
+.scanning-dot:nth-child(2){animation-delay:0.2s}
+.scanning-dot:nth-child(3){animation-delay:0.4s}
+
+@media(max-width:520px){
+  .nav-links .nav-link:not(.nav-cta){display:none}
+  .pick-match{font-size:15px}
+  .tg-plans{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+  .pick-pills{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><div class="logo-dot"></div>SlipScan Picks</div>
+  <div class="nav-links">
+    <button class="nav-link active" onclick="showTab('today')">Today</button>
+    <button class="nav-link" onclick="showTab('results')">Results</button>
+    <button class="nav-link" onclick="showTab('stats')">Stats</button>
+    <button class="nav-link" onclick="showTab('scan')">Scan Slip</button>
+    <button class="nav-cta" onclick="showTab('join')">Join Pro</button>
+  </div>
+</nav>
+
+<div class="ticker">
+  <div class="ticker-item"><span class="ticker-value" style="color:var(--green)">23</span><span class="ticker-label">Total Picks</span></div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item"><span class="ticker-value" style="color:var(--green)">17</span><span class="ticker-label">Won</span></div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item"><span class="ticker-value" style="color:var(--red)">4</span><span class="ticker-label">Lost</span></div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item"><span class="ticker-value" style="color:var(--yellow)">2</span><span class="ticker-label">Pending</span></div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item"><span class="ticker-value" style="color:var(--green)">74%</span><span class="ticker-label">Win Rate</span></div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item"><span class="ticker-value" style="color:var(--green)">+11.5u</span><span class="ticker-label">Total Units</span></div>
+  <div class="ticker-divider"></div>
+  <div class="ticker-item"><span class="ticker-value">Jul 4</span><span class="ticker-label">Last Updated</span></div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" id="tab-today" onclick="showTab('today')">Today's Picks</button>
+  <button class="tab" id="tab-results" onclick="showTab('results')">Results</button>
+  <button class="tab" id="tab-stats" onclick="showTab('stats')">My Stats</button>
+  <button class="tab" id="tab-join" onclick="showTab('join')">Join Pro</button>
+  <button class="tab" id="tab-scan" onclick="showTab('scan')">🔍 Scan Slip</button>
+</div>
+
+<main>
+
+<!-- TODAY TAB -->
+<div id="view-today">
+
+  <div style="margin-bottom:20px">
+    <div class="section-header">
+      <span class="section-title">Today's Picks</span>
+      <span class="section-date">Jul 4, 2026</span>
+    </div>
+
+    <div id="picks-container">
+      <div class="no-picks" id="picks-loading">Loading today's picks...</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- RESULTS TAB -->
+<div id="view-results" style="display:none">
+  <div class="section-header">
+    <span class="section-title">Results history</span>
+    <span class="section-date">Last 14 days</span>
+  </div>
+
+  <div class="history-row won">
+    <div class="history-info">
+      <div class="history-match">Colombia vs Ghana</div>
+      <div class="history-sub">World Cup · Jul 4 · Under 2.5</div>
+    </div>
+    <div class="history-right">
+      <div class="history-pick">1–0 · FT</div>
+      <div class="history-unit green">+1.0u</div>
+    </div>
+  </div>
+  <div class="history-row lost">
+    <div class="history-info">
+      <div class="history-match">Argentina vs Cape Verde Islands</div>
+      <div class="history-sub">World Cup · Jul 3 · Home/No BTTS</div>
+    </div>
+    <div class="history-right">
+      <div class="history-pick">3–2 · FT</div>
+      <div class="history-unit red">-0.5u</div>
+    </div>
+  </div>
+  <div class="history-row won">
+    <div class="history-info">
+      <div class="history-match">France vs Sweden</div>
+      <div class="history-sub">World Cup · Jun 30 · Over 1.5</div>
+    </div>
+    <div class="history-right">
+      <div class="history-pick">3–0 · FT</div>
+      <div class="history-unit green">+1.0u</div>
+    </div>
+  </div>
+  <div class="history-row won">
+    <div class="history-info">
+      <div class="history-match">Morocco vs Netherlands</div>
+      <div class="history-sub">World Cup · Jun 30 · Under 3.5</div>
+    </div>
+    <div class="history-right">
+      <div class="history-pick">1–1 (Pens) · FT</div>
+      <div class="history-unit green">+1.0u</div>
+    </div>
+  </div>
+  <div class="history-row won">
+    <div class="history-info">
+      <div class="history-match">Norway vs Ivory Coast</div>
+      <div class="history-sub">World Cup · Jun 30 · Under 3.5</div>
+    </div>
+    <div class="history-right">
+      <div class="history-pick">2–1 · FT</div>
+      <div class="history-unit green">+1.0u</div>
+    </div>
+  </div>
+  <div class="history-row lost">
+    <div class="history-info">
+      <div class="history-match">Germany vs Mexico</div>
+      <div class="history-sub">World Cup · Jun 29 · Over 2.5</div>
+    </div>
+    <div class="history-right">
+      <div class="history-pick">0–2 · FT</div>
+      <div class="history-unit red">-1.0u</div>
+    </div>
+  </div>
+  <div class="history-row won">
+    <div class="history-info">
+      <div class="history-match">England vs Nigeria</div>
+      <div class="history-sub">World Cup · Jun 28 · Double Chance 1X</div>
+    </div>
+    <div class="history-right">
+      <div class="history-pick">2–1 · FT</div>
+      <div class="history-unit green">+0.5u</div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center">
+    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--green)">74%</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Win rate</div></div>
+    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--green)">+11.5u</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Net units</div></div>
+    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600">17/23</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Record</div></div>
+    <div><div style="font-family:var(--font-mono);font-size:22px;font-weight:600;color:var(--green)">65%</div><div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.7px;margin-top:2px">Min conf</div></div>
+  </div>
+</div>
+
+<!-- STATS TAB -->
+<div id="view-stats" style="display:none">
+  <div class="section-header">
+    <span class="section-title">Performance by market</span>
+    <span class="section-date">All time</span>
+  </div>
+
+  <div style="display:grid;gap:10px">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:600">Over/Under goals</div>
+        <div style="font-family:var(--font-mono);font-size:13px;color:var(--green);font-weight:600">80% · 8/10</div>
+      </div>
+      <div class="conf-bar-track"><div class="conf-bar-fill" style="width:80%;background:var(--green)"></div></div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px">Best performing market — avg confidence 76%</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:600">Double Chance</div>
+        <div style="font-family:var(--font-mono);font-size:13px;color:var(--green);font-weight:600">75% · 3/4</div>
+      </div>
+      <div class="conf-bar-track"><div class="conf-bar-fill" style="width:75%;background:var(--green)"></div></div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px">Strong with heavy favorites — avg confidence 71%</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:600">BTTS</div>
+        <div style="font-family:var(--font-mono);font-size:13px;color:var(--yellow);font-weight:600">60% · 3/5</div>
+      </div>
+      <div class="conf-bar-track"><div class="conf-bar-fill" style="width:60%;background:var(--yellow)"></div></div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px">Still gathering data — need more samples</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <div style="font-family:var(--font-display);font-size:15px;font-weight:600">Home/Away Win</div>
+        <div style="font-family:var(--font-mono);font-size:13px;color:var(--red);font-weight:600">50% · 2/4</div>
+      </div>
+      <div class="conf-bar-track"><div class="conf-bar-fill" style="width:50%;background:var(--red)"></div></div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px">Risky — reducing stake or dropping this market</div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;padding:16px;background:var(--card);border:1px solid rgba(0,232,122,0.12);border-radius:12px">
+    <div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:8px">Edge insight</div>
+    <div style="font-size:13px;color:rgba(238,238,245,0.7);line-height:1.6">Over/Under goals is your strongest market at 80% win rate. Double Chance shows promise at 75%. Focus stakes here — these two markets dey give clear statistical edge. BTTS and straight wins need more samples before increasing stake.</div>
+  </div>
+</div>
+
+<!-- JOIN TAB -->
+<div id="view-join" style="display:none">
+  <div class="tg-cta" style="margin-top:0">
+    <h3>Get picks before kickoff</h3>
+    <p>Free channel for teasers. Pro group for full AI analysis — stats, confidence, reasoning, bookmaker recommendation, and unit stake on every pick.</p>
+    <button class="tg-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.247l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.54 14.46l-2.95-.924c-.642-.2-.654-.642.136-.953l11.52-4.44c.537-.194 1.006.131.316.104z"/></svg>
+      Join Free Channel
+    </button>
+    <div class="tg-plans">
+      <div class="tg-plan">
+        <div class="tg-plan-name">🆓 Free channel</div>
+        <div class="tg-plan-price">₦0</div>
+        <div class="tg-plan-features">
+          1 teaser pick daily<br>
+          Public results only<br>
+          World Cup coverage
+        </div>
+      </div>
+      <div class="tg-plan" style="border-color:rgba(0,232,122,0.25)">
+        <div class="tg-plan-name">⚡ Pro group</div>
+        <div class="tg-plan-price">₦2,500<span style="font-size:12px;color:var(--muted)">/mo</span></div>
+        <div class="tg-plan-features">
+          All picks + stats backing<br>
+          2 picks per match<br>
+          Bookmaker recommendation<br>
+          Unit stake guidance<br>
+          Multi-league coverage
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SCAN TAB -->
+<div id="view-scan" style="display:none">
+
+  <div class="scan-box">
+    <h3>Slip Scanner</h3>
+    <p>Upload a screenshot of your booked slip or paste the selection details below. Works with Bet9ja, SportyBet, 1xBet, 22Bet, Stake — any bookmaker.</p>
+
+    <div style="margin-bottom:14px">
+      <div class="pill-label" style="margin-bottom:8px">Your bookmaker</div>
+      <div class="bookie-select">
+        <button class="bookie-btn selected" onclick="selectBookie(this,'Bet9ja')">Bet9ja</button>
+        <button class="bookie-btn" onclick="selectBookie(this,'SportyBet')">SportyBet</button>
+        <button class="bookie-btn" onclick="selectBookie(this,'1xBet')">1xBet</button>
+        <button class="bookie-btn" onclick="selectBookie(this,'22Bet')">22Bet</button>
+        <button class="bookie-btn" onclick="selectBookie(this,'Stake')">Stake</button>
+        <button class="bookie-btn" onclick="selectBookie(this,'Other')">Other</button>
+      </div>
+    </div>
+
+    <label class="upload-zone" id="upload-zone">
+      <input type="file" accept="image/*" onchange="handleUpload(this)">
+      <div class="upload-icon">📸</div>
+      <div class="upload-text"><strong>Upload slip screenshot</strong><br>Screenshot your booking confirmation and drop here</div>
+    </label>
+
+    <div class="divider-or">or paste slip details manually</div>
+
+    <textarea class="scan-textarea" id="slip-input" placeholder="Paste your slip details here. Example:
+
+Booking Code: 5JSVX7V
+Bet9ja · 04/07/2026
+
+2398  Vaalerenga IF - Fredrikstad  →  1 (Home Win)
+2924  RW Oberhausen - Bochum  →  Over(2.5)
+3697  Helmond - AEK Larnaca  →  2 (Away Win)
+2060  Canvey Island - Ebbsfleet Utd  →  2 (Away Win)
+2186  RAAL La Louviere - Union Rochefortoise  →  Over(2.5)
+2163  Dordrecht - Feyenoord  →  2 (Away Win)"></textarea>
+
+    <button class="scan-btn" onclick="scanSlip()" id="scan-btn">🔍 Scan & Analyse Slip</button>
+  </div>
+
+  <div id="scan-results" style="display:none">
+
+    <div class="scanning-state" id="scanning-state" style="display:none">
+      <div style="margin-bottom:16px">
+        <span class="scanning-dot"></span>
+        <span class="scanning-dot"></span>
+        <span class="scanning-dot"></span>
+      </div>
+      <div style="font-family:var(--font-display);font-weight:600;font-size:15px;margin-bottom:6px">Analysing your slip...</div>
+      <div style="font-size:13px;color:var(--muted)" id="scan-status">Fetching match stats from database...</div>
+    </div>
+
+    <div id="scan-output" style="display:none">
+
+      <div class="section-header">
+        <span class="section-title">Slip Analysis</span>
+        <span class="section-date" id="scan-bookie-label">Bet9ja</span>
+      </div>
+
+      <!-- LEG 1 — KEEP -->
+      <div class="result-card">
+        <div class="result-header" onclick="toggleExpand('r1')">
+          <div>
+            <div class="result-match">Dordrecht vs Feyenoord</div>
+            <div class="result-sub">Eredivisie · Away Win (2)</div>
+          </div>
+          <div class="result-verdict verdict-keep">✓ Keep</div>
+        </div>
+        <div class="pick-expanded" id="r1">
+          <div class="result-stats">
+            <div class="result-stat">
+              <div class="result-stat-label">Dordrecht (Home)</div>
+              <div class="result-stat-rows">
+                <div class="stat-row"><span>Goals/match</span><span>0.8</span></div>
+                <div class="stat-row"><span>Goals conceded</span><span>2.4</span></div>
+                <div class="stat-row"><span>Clean sheets</span><span style="color:var(--red)">0</span></div>
+                <div class="stat-row"><span>Big chances/match</span><span>1.2</span></div>
+              </div>
+            </div>
+            <div class="result-stat">
+              <div class="result-stat-label">Feyenoord (Away)</div>
+              <div class="result-stat-rows">
+                <div class="stat-row"><span>Goals/match</span><span style="color:var(--green)">2.6</span></div>
+                <div class="stat-row"><span>Goals conceded</span><span>0.8</span></div>
+                <div class="stat-row"><span>Away form</span><span style="color:var(--green)">W4 D1 L0</span></div>
+                <div class="stat-row"><span>Shots on target</span><span>5.8</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="result-reasoning">
+            <div class="result-reasoning-label" style="color:var(--green)">Why keep this leg</div>
+            Feyenoord are dominant away — 4 wins, 1 draw in last 5 away games. Dordrecht concede 2.4 goals per match with zero clean sheets. Massive quality gap backed by stats. Away win highly probable.
+          </div>
+          <div class="pick-pills" style="padding-top:10px;border-top:1px solid var(--border)">
+            <div class="pill"><span class="pill-label">Your pick</span><span class="pill-value">Away Win</span></div>
+            <div class="pill"><span class="pill-label">Confidence</span><span class="pill-value green">81%</span></div>
+            <div class="pill"><span class="pill-label">Edge</span><span class="pill-value green">Strong</span></div>
+            <div class="pill"><span class="pill-label">Verdict</span><span class="pill-value green">✓ Keep</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEG 2 — KEEP -->
+      <div class="result-card">
+        <div class="result-header" onclick="toggleExpand('r2')">
+          <div>
+            <div class="result-match">RW Oberhausen vs Bochum</div>
+            <div class="result-sub">3. Liga · Over 2.5 Goals</div>
+          </div>
+          <div class="result-verdict verdict-keep">✓ Keep</div>
+        </div>
+        <div class="pick-expanded" id="r2">
+          <div class="result-stats">
+            <div class="result-stat">
+              <div class="result-stat-label">Oberhausen</div>
+              <div class="result-stat-rows">
+                <div class="stat-row"><span>Goals/match</span><span>1.6</span></div>
+                <div class="stat-row"><span>Goals conceded</span><span>1.8</span></div>
+                <div class="stat-row"><span>BTTS rate</span><span style="color:var(--green)">67%</span></div>
+                <div class="stat-row"><span>Over 2.5 rate</span><span style="color:var(--green)">62%</span></div>
+              </div>
+            </div>
+            <div class="result-stat">
+              <div class="result-stat-label">Bochum</div>
+              <div class="result-stat-rows">
+                <div class="stat-row"><span>Goals/match</span><span>1.8</span></div>
+                <div class="stat-row"><span>Goals conceded</span><span>1.4</span></div>
+                <div class="stat-row"><span>BTTS rate</span><span style="color:var(--green)">58%</span></div>
+                <div class="stat-row"><span>Over 2.5 rate</span><span style="color:var(--green)">58%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="result-reasoning">
+            <div class="result-reasoning-label" style="color:var(--green)">Why keep this leg</div>
+            Combined goals average 3.4 per match. Both teams score and concede regularly — BTTS rate above 58% for both. Over 2.5 statistically well-supported here.
+          </div>
+          <div class="pick-pills" style="padding-top:10px;border-top:1px solid var(--border)">
+            <div class="pill"><span class="pill-label">Your pick</span><span class="pill-value">Over 2.5</span></div>
+            <div class="pill"><span class="pill-label">Confidence</span><span class="pill-value green">74%</span></div>
+            <div class="pill"><span class="pill-label">Edge</span><span class="pill-value green">Good</span></div>
+            <div class="pill"><span class="pill-label">Verdict</span><span class="pill-value green">✓ Keep</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEG 3 — RISKY -->
+      <div class="result-card">
+        <div class="result-header" onclick="toggleExpand('r3')">
+          <div>
+            <div class="result-match">RAAL La Louviere vs Union Rochefortoise</div>
+            <div class="result-sub">Belgian Second Division · Over 2.5</div>
+          </div>
+          <div class="result-verdict verdict-risky">⚠ Risky</div>
+        </div>
+        <div class="pick-expanded" id="r3">
+          <div class="result-stats">
+            <div class="result-stat">
+              <div class="result-stat-label">La Louviere</div>
+              <div class="result-stat-rows">
+                <div class="stat-row"><span>Goals/match</span><span>1.2</span></div>
+                <div class="stat-row"><span>Goals conceded</span><span>1.0</span></div>
+                <div class="stat-row"><span>Over 2.5 rate</span><span style="color:var(--yellow)">40%</span></div>
+                <div class="stat-row"><span>Home BTTS</span><span style="color:var(--yellow)">44%</span></div>
+              </div>
+            </div>
+            <div class="result-stat">
+              <div class="result-stat-label">Union Rochefortoise</div>
+              <div class="result-stat-rows">
+                <div class="stat-row"><span>Goals/match</span><span>1.0</span></div>
+                <div class="stat-row"><span>Goals conceded</span><span>1.2</span></div>
+                <div class="stat-row"><span>Over 2.5 rate</span><span style="color:var(--yellow)">38%</span></div>
+                <div class="stat-row"><span>Away BTTS</span><span style="color:var(--yellow)">40%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="result-reasoning">
+            <div class="result-reasoning-label" style="color:var(--yellow)">Why this is risky</div>
+            Combined goals average only 2.2 per match. Over 2.5 rate below 45% for both sides. Lower league Belgian football trends defensive. Stats do not support Over 2.5 — probability closer to 39%.
+          </div>
+          <div class="pick-pills" style="padding-top:10px;border-top:1px solid var(--border)">
+            <div class="pill"><span class="pill-label">Your pick</span><span class="pill-value">Over 2.5</span></div>
+            <div class="pill"><span class="pill-label">Confidence</span><span class="pill-value yellow">48%</span></div>
+            <div class="pill"><span class="pill-label">Edge</span><span class="pill-value yellow">Weak</span></div>
+            <div class="pill"><span class="pill-label">Verdict</span><span class="pill-value yellow">⚠ Risky</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEG 4 — DROP -->
+      <div class="result-card">
+        <div class="result-header" onclick="toggleExpand('r4')">
+          <div>
+            <div class="result-match">Canvey Island vs Ebbsfleet Utd</div>
+            <div class="result-sub">National League South · Away Win (2)</div>
+          </div>
+          <div class="result-verdict verdict-drop">✗ Drop</div>
+        </div>
+        <div class="pick-expanded" id="r4">
+          <div class="result-stats">
+            <div class="result-stat">
+              <div class="result-stat-label">Canvey Island</div>
+              <div class="result-stat-rows">
+                <div class="stat-row"><span>Home form</span><span style="color:var(--green)">W3 D1 L1</span></div>
+                <div class="stat-row"><span>Goals/match</span><span>1.8</span></div>
+                <div class="stat-row"><span>Goals conceded</span><span>1.0</span></div>
+                <div class="stat-row"><span>Home clean sheets</span><span style="color:var(--green)">3</span></div>
+              </div>
+            </div>
+            <div class="result-stat">
+              <div class="result-stat-label">Ebbsfleet Utd</div>
+              <div class="result-stat-rows">
+                <div class="stat-row"><span>Away form</span><span style="color:var(--red)">W1 D1 L3</span></div>
+                <div class="stat-row"><span>Goals/match</span><span>1.0</span></div>
+                <div class="stat-row"><span>Goals conceded away</span><span style="color:var(--red)">2.2</span></div>
+                <div class="stat-row"><span>Away clean sheets</span><span style="color:var(--red)">0</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="result-reasoning">
+            <div class="result-reasoning-label" style="color:var(--red)">Why drop this leg</div>
+            Stats go against this pick. Canvey Island strong at home — 3 clean sheets, good form. Ebbsfleet terrible away — 3 losses, 0 away clean sheets, concede 2.2 per away game. Away win here contradicts the data. Drop this leg.
+          </div>
+          <div class="pick-pills" style="padding-top:10px;border-top:1px solid var(--border)">
+            <div class="pill"><span class="pill-label">Your pick</span><span class="pill-value">Away Win</span></div>
+            <div class="pill"><span class="pill-label">Confidence</span><span class="pill-value red">28%</span></div>
+            <div class="pill"><span class="pill-label">Edge</span><span class="pill-value red">None</span></div>
+            <div class="pill"><span class="pill-label">Verdict</span><span class="pill-value red">✗ Drop</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEG 5 — NO DATA -->
+      <div class="result-card">
+        <div class="result-header" onclick="toggleExpand('r5')">
+          <div>
+            <div class="result-match">Vaalerenga IF vs Fredrikstad</div>
+            <div class="result-sub">Norwegian League · Home Win (1)</div>
+          </div>
+          <div class="result-verdict verdict-nodata">No Data</div>
+        </div>
+        <div class="pick-expanded" id="r5">
+          <div class="result-reasoning" style="background:rgba(90,90,114,0.08);border-color:rgba(90,90,114,0.15)">
+            <div class="result-reasoning-label" style="color:var(--muted)">Why we cannot grade this leg</div>
+            Norwegian Eliteserien not in our current stats database. We cannot verify or dispute this pick with real data. Treat as ungraded — do not include in cleaner slip. Adding legs we cannot verify defeats the purpose of stats-backed analysis.
+          </div>
+          <div class="pick-pills" style="padding-top:10px;border-top:1px solid var(--border)">
+            <div class="pill"><span class="pill-label">Your pick</span><span class="pill-value">Home Win</span></div>
+            <div class="pill"><span class="pill-label">Confidence</span><span class="pill-value" style="color:var(--muted)">N/A</span></div>
+            <div class="pill"><span class="pill-label">Edge</span><span class="pill-value" style="color:var(--muted)">Unknown</span></div>
+            <div class="pill"><span class="pill-label">Verdict</span><span class="pill-value" style="color:var(--muted)">No data</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="summary-box">
+        <div class="summary-title">📌 Our recommendation</div>
+        <div class="summary-grid">
+          <div class="summary-stat">
+            <div class="summary-stat-val" style="color:var(--green)">2</div>
+            <div class="summary-stat-label">Keep</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat-val" style="color:var(--yellow)">1</div>
+            <div class="summary-stat-label">Risky</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat-val" style="color:var(--red)">1</div>
+            <div class="summary-stat-label">Drop</div>
+          </div>
+        </div>
+
+        <div class="cleaner-slip">
+          <div class="cleaner-slip-title">Cleaner 2-leg slip — stats-backed only</div>
+          <div class="cleaner-leg">
+            <div class="cleaner-leg-match">Dordrecht vs Feyenoord</div>
+            <div class="cleaner-leg-pick">Away Win</div>
+            <div class="cleaner-leg-conf">81%</div>
+          </div>
+          <div class="cleaner-leg">
+            <div class="cleaner-leg-match">RW Oberhausen vs Bochum</div>
+            <div class="cleaner-leg-pick">Over 2.5</div>
+            <div class="cleaner-leg-conf">74%</div>
+          </div>
+          <div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)">
+            Combined odds lower but both legs backed by real stats. Original 6-leg slip had a 28% confidence leg (Canvey Island away win) that would have sunk the whole ticket. 2 strong legs beat 6 mixed legs every time.
+          </div>
+        </div>
+      </div>
+
+      <button class="scan-btn" style="margin-top:16px;background:rgba(255,255,255,0.06);color:var(--text)" onclick="resetScan()">Scan another slip</button>
+
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  <div style="font-weight:600;color:var(--text);margin-bottom:6px">SlipScan Picks</div>
+  AI-assisted analysis backed by real match stats. Not financial advice. 18+ only. Bet responsibly.<br>
+  Every result — won or lost — stays on the public record. Always. Min confidence: 65%.
+</footer>
+
+<script>
+var selectedBookie = 'Bet9ja';
+
+function selectBookie(el, name) {
+  document.querySelectorAll('.bookie-btn').forEach(function(b) { b.classList.remove('selected'); });
+  el.classList.add('selected');
+  selectedBookie = name;
+}
+
+function handleUpload(input) {
+  if (input.files && input.files[0]) {
+    var zone = document.getElementById('upload-zone');
+    zone.style.borderColor = 'rgba(0,232,122,0.4)';
+    zone.style.background = 'rgba(0,232,122,0.05)';
+    zone.querySelector('.upload-text').innerHTML = '<strong style="color:var(--green)">&#10003; ' + input.files[0].name + '</strong><br><span style="color:var(--muted)">Click Scan to analyse</span>';
+  }
+}
+
+function scanSlip() {
+  var input = document.getElementById('slip-input').value.trim();
+  var fileInput = document.querySelector('.upload-zone input');
+  if (!input && (!fileInput.files || !fileInput.files.length)) {
+    document.getElementById('slip-input').style.borderColor = 'rgba(255,65,86,0.4)';
+    setTimeout(function() { document.getElementById('slip-input').style.borderColor = ''; }, 2000);
+    return;
+  }
+  document.getElementById('scan-btn').disabled = true;
+  document.getElementById('scan-results').style.display = 'block';
+  document.getElementById('scanning-state').style.display = 'block';
+  document.getElementById('scan-output').style.display = 'none';
+  document.getElementById('scan-bookie-label').textContent = selectedBookie;
+
+  var messages = [
+    'Fetching match stats from database...',
+    'Pulling team form and goals data...',
+    'Running confidence analysis per leg...',
+    'Identifying strong vs weak selections...',
+    'Building cleaner slip recommendation...'
+  ];
+  var i = 0;
+  var interval = setInterval(function() {
+    if (i < messages.length) {
+      document.getElementById('scan-status').textContent = messages[i];
+      i++;
+    } else {
+      clearInterval(interval);
+      document.getElementById('scanning-state').style.display = 'none';
+      document.getElementById('scan-output').style.display = 'block';
+      document.getElementById('scan-btn').disabled = false;
+      document.getElementById('scan-output').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 900);
+}
+
+function resetScan() {
+  document.getElementById('slip-input').value = '';
+  document.getElementById('scan-results').style.display = 'none';
+  document.getElementById('scan-btn').disabled = false;
+  var zone = document.getElementById('upload-zone');
+  zone.style.borderColor = '';
+  zone.style.background = '';
+  zone.querySelector('.upload-text').innerHTML = '<strong>Upload slip screenshot</strong><br>Screenshot your booking confirmation and drop here';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showTab(tab) {
+  var tabs = ['today', 'results', 'stats', 'join', 'scan'];
+  for (var i = 0; i < tabs.length; i++) {
+    var t = tabs[i];
+    var view = document.getElementById('view-' + t);
+    if (view) view.style.display = (t === tab) ? 'block' : 'none';
+    var tabEl = document.getElementById('tab-' + t);
+    if (tabEl) tabEl.classList.toggle('active', t === tab);
+  }
+}
+
+function toggleExpand(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
+function esc(str) {
+  var d = document.createElement('div');
+  d.textContent = str == null ? '' : String(str);
+  return d.innerHTML;
+}
+
+function confColor(pct) {
+  if (pct >= 80) return 'var(--green)';
+  if (pct >= 70) return 'var(--yellow)';
+  return 'var(--blue)';
+}
+
+function buildPickCard(pick, index) {
+  var id = 'p' + index;
+  var conf = pick.final_confidence != null ? pick.final_confidence : pick.rule_confidence;
+  var confPct = Math.round(conf * 10) / 10;
+  var color = confColor(confPct);
+
+  var verdictLine = '';
+  if (pick.verdict && pick.verdict !== 'confirm') {
+    verdictLine = '<div class="skip-notice" style="margin-top:8px">Claude verdict: <strong>' + esc(pick.verdict.toUpperCase()) + '</strong></div>';
+  }
+
+  var adjustmentsHtml = '';
+  if (pick.adjustments && pick.adjustments.length) {
+    adjustmentsHtml = pick.adjustments.map(function(a) {
+      return '<div class="stat-row"><span>⚙️</span><span>' + esc(a) + '</span></div>';
+    }).join('');
+  }
+
+  var valueHtml = '';
+  if (pick.value && pick.value.value_checked) {
+    valueHtml = '<div class="pick2-box"><div class="pick2-label">Value check</div><div class="pick2-content"><div>Edge: ' +
+      esc(pick.value.edge) + '</div><div class="pick2-meta"><span>EV/unit: ' + esc(pick.value.ev_per_unit) + '</span></div></div></div>';
+  }
+
+  var riskHtml = pick.risk_notes
+    ? '<div class="reasoning-box" style="background:rgba(255,200,0,0.05);border-color:rgba(255,200,0,0.15)"><div class="reasoning-label" style="color:var(--yellow)">Risk flagged</div>' + esc(pick.risk_notes) + '</div>'
+    : '';
+
+  var reasoningHtml = pick.reasoning
+    ? '<div class="reasoning-box"><div class="reasoning-label">AI reasoning</div>' + esc(pick.reasoning) + '</div>'
+    : '';
+
+  return (
+    '<div class="pick-card pending" onclick="toggleExpand(\'' + id + '\')">' +
+      '<div class="pick-main">' +
+        '<div class="pick-top">' +
+          '<div>' +
+            '<div class="pick-meta"><span>⚽ ' + esc(pick.competition || 'Football') + '</span></div>' +
+            '<div class="pick-match">' + esc(pick.match) + '</div>' +
+          '</div>' +
+          '<div class="badge badge-pending">Pending</div>' +
+        '</div>' +
+        '<div class="pick-pills">' +
+          '<div class="pill"><span class="pill-label">Pick</span><span class="pill-value">' + esc(pick.market_name) + ' — ' + esc(pick.side) + '</span></div>' +
+          '<div class="pill"><span class="pill-label">Confidence</span><span class="pill-value" style="color:' + color + '">' + confPct + '%</span></div>' +
+          '<div class="pill"><span class="pill-label">Stake</span><span class="pill-value">' + esc(pick.stake) + 'u</span></div>' +
+        '</div>' +
+        '<div class="conf-bar-wrap">' +
+          '<div class="conf-bar-track"><div class="conf-bar-fill" style="width:' + confPct + '%;background:' + color + '"></div></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="pick-expanded" id="' + id + '">' +
+        reasoningHtml +
+        riskHtml +
+        verdictLine +
+        (adjustmentsHtml ? '<div class="stats-grid" style="grid-template-columns:1fr">' + adjustmentsHtml + '</div>' : '') +
+        valueHtml +
+      '</div>' +
+    '</div>'
+  );
+}
+
+function renderTodayPicks(data) {
+  var container = document.getElementById('picks-container');
+  var dateEl = document.querySelector('#view-today .section-date');
+  if (dateEl && data.date) dateEl.textContent = data.date;
+
+  var picks = (data && data.picks) || [];
+
+  if (!picks.length) {
+    container.innerHTML =
+      '<div class="no-picks">' +
+        '<div style="font-size:15px;color:var(--text);margin-bottom:6px">No picks today</div>' +
+        '<div>Nothing cleared our 65% confidence bar. Honest zero — quality over quantity.</div>' +
+      '</div>';
+    return;
+  }
+
+  container.innerHTML = picks.map(function(p, i) { return buildPickCard(p, i + 1); }).join('');
+
+  container.querySelectorAll('.conf-bar-fill').forEach(function(bar) {
+    var w = bar.style.width;
+    bar.style.width = '0';
+    setTimeout(function() { bar.style.width = w; }, 200);
+  });
+}
+
+function loadTodayPicks() {
+  fetch('./data/picks_output.json', { cache: 'no-store' })
+    .then(function(r) {
+      if (!r.ok) throw new Error('picks_output.json not found (' + r.status + ')');
+      return r.json();
+    })
+    .then(renderTodayPicks)
+    .catch(function(err) {
+      var container = document.getElementById('picks-container');
+      container.innerHTML =
+        '<div class="no-picks">' +
+          '<div style="font-size:15px;color:var(--red);margin-bottom:6px">Could not load picks</div>' +
+          '<div>' + esc(err.message) + '</div>' +
+        '</div>';
+    });
+}
+
+window.onload = function() {
+  loadTodayPicks();
+  document.querySelectorAll('.conf-bar-fill').forEach(function(bar) {
+    var w = bar.style.width;
+    bar.style.width = '0';
+    setTimeout(function() { bar.style.width = w; }, 200);
+  });
+};
+</script>
+</body>
+</html>
