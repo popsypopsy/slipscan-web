@@ -3,7 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SlipScan Picks</title>
+<title>SlipScan Picks — AI Football Analysis</title>
+<meta name="description" content="AI-assisted football pick analysis backed by real match stats. Honest zero-pick days. Every result tracked publicly.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Open Graph (WhatsApp, Telegram, Facebook link previews) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="SlipScan Picks — AI Football Analysis">
+<meta property="og:description" content="AI-assisted football pick analysis backed by real match stats. Honest zero-pick days. Every result tracked publicly. 78% minimum confidence.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://slipscan-web.vercel.app">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SlipScan Picks — AI Football Analysis">
+<meta name="twitter:description" content="AI-assisted football pick analysis backed by real match stats. Honest zero-pick days.">
+<meta name="twitter:image" content="og-image.png">
 <script>
   // Runs before first paint — sets the right theme immediately, no flash.
   // Defaults to dark (the brand identity), but respects a saved choice or
@@ -72,7 +93,9 @@ nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:b
 .ticker-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted)}
 .ticker-divider{width:1px;background:var(--border);align-self:stretch;min-width:1px}
 
-.tabs{display:flex;gap:4px;padding:20px 20px 0;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:56px;z-index:50}
+.tabs{display:flex;gap:4px;padding:20px 20px 0;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:56px;z-index:50;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0}
 .tab{padding:10px 16px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s;background:none;border-top:none;border-left:none;border-right:none}
 .tab.active{color:var(--text);border-bottom-color:var(--green)}
 .tab:hover{color:var(--text)}
