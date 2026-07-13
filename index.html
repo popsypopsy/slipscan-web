@@ -493,6 +493,14 @@ function confColor(pct) {
   return 'var(--blue)';
 }
 
+function getLagosDateString() {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Lagos', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+}
+
+function getLagosHour() {
+  return parseInt(new Intl.DateTimeFormat('en-US', { timeZone: 'Africa/Lagos', hour: 'numeric', hour12: false }).format(new Date()), 10);
+}
+
 function buildSignalMeter(pct, color, label) {
   var litCount = Math.round((pct / 100) * 8);
   var bars = '';
@@ -583,14 +591,26 @@ function renderTodayPicks(data) {
   var picks = (data && data.picks) || [];
 
   if (!picks.length) {
+    var todayWAT = getLagosDateString();
+    var hasNotRunYetToday = data.date !== todayWAT;
+
+    var heading, body;
+    if (hasNotRunYetToday) {
+      heading = 'Picks generate at 7:00 AM WAT';
+      body = "Today's analysis hasn't run yet — check back after 7AM West Africa Time. This page updates itself automatically once it's ready, no need to refresh manually.";
+    } else {
+      heading = 'No signal today';
+      body = 'Nothing cleared our 78% confidence bar, or Claude flagged a risk on everything that did. Honest zero — quality over quantity.';
+    }
+
     container.innerHTML =
       '<div class="no-picks">' +
         '<div class="signal-meter" style="justify-content:center;max-width:160px;margin:0 auto 18px">' +
           '<div class="signal-bar"></div><div class="signal-bar"></div><div class="signal-bar"></div><div class="signal-bar"></div>' +
           '<div class="signal-bar"></div><div class="signal-bar"></div><div class="signal-bar"></div><div class="signal-bar"></div>' +
         '</div>' +
-        '<div style="font-size:15px;color:var(--text);margin-bottom:6px">No signal today</div>' +
-        '<div>Nothing cleared our 78% confidence bar, or Claude flagged a risk on everything that did. Honest zero — quality over quantity.</div>' +
+        '<div style="font-size:15px;color:var(--text);margin-bottom:6px">' + esc(heading) + '</div>' +
+        '<div>' + esc(body) + '</div>' +
       '</div>';
     return;
   }
