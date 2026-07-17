@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SlipScan Picks — Football Analysis You Can Actually Verify</title>
+<meta name="description" content="Football pick analysis backed by real match statistics and probability modeling. We publish what we ruled OUT, not just what we picked. Every result stays public forever.">
+
+<script>
+  (function() {
+    var saved = localStorage.getItem('slipscan-theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07070E;--surface:#10101A;--card:#171722;
+  --green:#00E87A;--green-dim:rgba(0,232,122,0.1);--green-mid:rgba(0,232,122,0.18);
+  --red:#FF4156;--red-dim:rgba(255,65,86,0.1);
+  --yellow:#FFB800;
+  --text:#EEEEF5;--muted:#5A5A72;--border:rgba(255,255,255,0.06);
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+[data-theme="light"]{
+  --bg:#F5F6F8;--surface:#FFFFFF;--card:#FFFFFF;
+  --green:#00A85E;--green-dim:rgba(0,168,94,0.08);--green-mid:rgba(0,168,94,0.14);
+  --red:#DC2626;--red-dim:rgba(220,38,38,0.07);
+  --yellow:#B45309;
+  --text:#0F1115;--muted:#6B7280;--border:rgba(0,0,0,0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+*:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+
+/* ===== NAV ===== */
+nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:16px 0}
+nav .wrap{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-display);font-weight:700;font-size:17px;display:flex;align-items:center;gap:8px}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:none;border:1px solid var(--border);color:var(--muted);cursor:pointer}
+.theme-toggle .icon-moon{display:block}.theme-toggle .icon-sun{display:none}
+[data-theme="light"] .theme-toggle .icon-moon{display:none}[data-theme="light"] .theme-toggle .icon-sun{display:block}
+.nav-cta{background:var(--green);color:#000;padding:9px 18px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap}
+
+/* ===== HERO ===== */
+.hero{padding:80px 0 60px;text-align:center}
+.eyebrow{font-family:var(--font-mono);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+h1{font-family:var(--font-display);font-size:44px;font-weight:700;line-height:1.15;letter-spacing:-1px;max-width:680px;margin:0 auto 20px}
+h1 .accent{color:var(--green)}
+.hero-sub{font-size:17px;color:var(--muted);max-width:520px;margin:0 auto 40px;line-height:1.6}
+
+/* Signature hero visual — a real signal read, some picks confirmed (lit),
+   some rejected by the math or by Claude (crossed out). This IS the
+   thesis, not decoration: we show you what we said no to, not just yes. */
+.signal-hero{display:flex;justify-content:center;gap:8px;margin:0 auto 16px;flex-wrap:wrap;max-width:600px}
+.signal-hero-item{display:flex;flex-direction:column;align-items:center;gap:8px;width:64px}
+.signal-hero-bars{display:flex;align-items:flex-end;gap:2px;height:44px}
+.signal-hero-bar{width:6px;border-radius:2px 2px 1px 1px;background:var(--border)}
+.signal-hero-bar.lit{background:var(--green)}
+.signal-hero-bar.dead{background:var(--red);opacity:0.35}
+.signal-hero-item.rejected{opacity:0.4}
+.signal-hero-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);text-align:center}
+.signal-hero-label.confirmed{color:var(--green)}
+.hero-caption{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-top:14px}
+
+.hero-ctas{display:flex;gap:12px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.btn-primary{background:var(--green);color:#000;padding:13px 26px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none}
+.btn-secondary{background:none;color:var(--text);padding:13px 26px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--border)}
+
+/* ===== HOW IT WORKS ===== */
+section{padding:64px 0;border-top:1px solid var(--border)}
+.section-label{font-family:var(--font-mono);font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+h2{font-family:var(--font-display);font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bottom:16px;max-width:520px}
+.section-intro{color:var(--muted);max-width:520px;margin-bottom:48px;line-height:1.6}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px}
+.step-num{font-family:var(--font-mono);font-size:13px;color:var(--green);margin-bottom:14px}
+.step h3{font-family:var(--font-display);font-size:17px;font-weight:600;margin-bottom:10px}
+.step p{color:var(--muted);font-size:14px;line-height:1.6}
+
+/* ===== WHAT WE STAND FOR — pledge, not bullet marketing ===== */
+.pledge{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:36px;position:relative;overflow:hidden}
+.pledge::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 0% 0%,var(--green-dim) 0%,transparent 50%);pointer-events:none}
+.pledge-line{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);position:relative}
+.pledge-line:last-child{border-bottom:none}
+.pledge-check{color:var(--green);font-family:var(--font-mono);font-size:15px;flex-shrink:0;margin-top:1px}
+.pledge-text{font-size:15px}
+.pledge-text strong{display:block;margin-bottom:3px}
+.pledge-text span{color:var(--muted);font-size:14px;line-height:1.5}
+
+/* ===== WHAT TO EXPECT ===== */
+.expect-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.expect-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
+.expect-card.highlight{border-color:rgba(0,232,122,0.25)}
+.expect-tier{font-family:var(--font-mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:8px}
+.expect-price{font-family:var(--font-mono);font-size:26px;font-weight:600;margin-bottom:14px}
+.expect-price span{font-size:13px;color:var(--muted);font-weight:400}
+.expect-list{font-size:14px;color:var(--muted);line-height:2}
+
+/* ===== FOOTER CTA ===== */
+.footer-cta{text-align:center;padding:80px 0}
+.footer-cta h2{margin:0 auto 14px;max-width:none}
+.footer-cta p{color:var(--muted);max-width:440px;margin:0 auto 32px}
+
+footer{border-top:1px solid var(--border);padding:32px 0;text-align:center}
+footer p{font-size:12px;color:var(--muted);line-height:1.8}
+
+@media(max-width:720px){
+  h1{font-size:32px}
+  .steps{grid-template-columns:1fr}
+  .expect-grid{grid-template-columns:1fr}
+  .signal-hero{gap:4px}
+  .signal-hero-item{width:52px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo"><div class="logo-dot"></div>SlipScan Picks</div>
+    <div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="index.html" class="nav-cta">See live results</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Real stats. Real math. Public track record.</div>
+    <h1>We show you what we <span class="accent">didn't</span> pick, not just what we did.</h1>
+    <p class="hero-sub">Real match stats run through actual probability math. Every pick gets double-checked before it ships — and if nothing clears the bar, we say so. No forced picks, no fake confidence.</p>
+
+    <div class="signal-hero" aria-hidden="true">
+      <div class="signal-hero-item">
+        <div class="signal-hero-bars">
+          <div class="signal-hero-bar lit" style="height:30%"></div><div class="signal-hero-bar lit" style="height:42%"></div>
+          <div class="signal-hero-bar lit" style="height:54%"></div><div class="signal-hero-bar lit" style="height:66%"></div>
+          <div class="signal-hero-bar lit" style="height:78%"></div><div class="signal-hero-bar lit" style="height:88%"></div>
+          <div class="signal-hero-bar lit" style="height:96%"></div><div class="signal-hero-bar lit" style="height:100%"></div>
+        </div>
+        <div class="signal-hero-label confirmed">85% — shipped</div>
+      </div>
+      <div class="signal-hero-item rejected">
+        <div class="signal-hero-bars">
+          <div class="signal-hero-bar dead" style="height:30%"></div><div class="signal-hero-bar dead" style="height:42%"></div>
+          <div class="signal-hero-bar dead" style="height:54%"></div><div class="signal-hero-bar" style="height:66%"></div>
+          <div class="signal-hero-bar" style="height:78%"></div><div class="signal-hero-bar" style="height:88%"></div>
+          <div class="signal-hero-bar" style="height:96%"></div><div class="signal-hero-bar" style="height:100%"></div>
+        </div>
+        <div class="signal-hero-label">41% — skipped</div>
+      </div>
+      <div class="signal-hero-item rejected">
+        <div class="signal-hero-bars">
+          <div class="signal-hero-bar dead" style="height:30%"></div><div class="signal-hero-bar dead" style="height:42%"></div>
+          <div class="signal-hero-bar dead" style="height:54%"></div><div class="signal-hero-bar dead" style="height:66%"></div>
+          <div class="signal-hero-bar dead" style="height:78%"></div><div class="signal-hero-bar" style="height:88%"></div>
+          <div class="signal-hero-bar" style="height:96%"></div><div class="signal-hero-bar" style="height:100%"></div>
+        </div>
+        <div class="signal-hero-label">Failed validation — skipped</div>
+      </div>
+    </div>
+    <div class="hero-caption">This is what a real day looks like. Some days, nothing ships at all.</div>
+
+    <div class="hero-ctas">
+      <a href="index.html" class="btn-primary">See today's picks</a>
+      <a href="#pledge" class="btn-secondary">What we stand for</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">How it works</div>
+    <h2>Three checks, not one guess.</h2>
+    <p class="section-intro">Every pick goes through the same process, every time. No shortcuts, no exceptions for a "good feeling" about a match.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Real stats, real math</h3>
+        <p>Actual match data — goals, shots, cards, corners, form — run through probability modeling. Not opinions, not vibes. A number comes out, or it doesn't.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>A second check, not a rubber stamp</h3>
+        <p>Every number the math produces gets reviewed for reasoning holes before it goes anywhere near a pick. If there's real doubt, it's cut here — no partial credit for "pretty confident." This step catches mistakes. It doesn't set your odds.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Clear the bar, or it doesn't ship</h3>
+        <p>Only picks that clear our publication threshold are released. The threshold can change without changing this website. Most days that's a handful of picks. Some days it's zero. Both are normal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pledge">
+  <div class="wrap">
+    <div class="section-label">What we stand for</div>
+    <h2>Not hype. Not noise. Just what actually happened.</h2>
+    <div class="pledge">
+      <div class="pledge-line">
+        <div class="pledge-check">✓</div>
+        <div class="pledge-text"><strong>Every result stays public, forever.</strong><span>Wins and losses both. We don't delete the bad days.</span></div>
+      </div>
+      <div class="pledge-line">
+        <div class="pledge-check">✓</div>
+        <div class="pledge-text"><strong>Zero-pick days are normal, not a failure.</strong><span>If nothing clears our bar, we say nothing — we don't force a pick to look active.</span></div>
+      </div>
+      <div class="pledge-line">
+        <div class="pledge-check">✓</div>
+        <div class="pledge-text"><strong>Every confidence percentage is calculated by the same statistical model using real match data.</strong><span>We never assign confidence manually.</span></div>
+      </div>
+      <div class="pledge-line">
+        <div class="pledge-check">✓</div>
+        <div class="pledge-text"><strong>Every published pick passes an independent validation before it's released.</strong><span>A second, separate check — not just the model grading its own homework.</span></div>
+      </div>
+      <div class="pledge-line">
+        <div class="pledge-check">✓</div>
+        <div class="pledge-text"><strong>No statistics? No prediction.</strong><span>We'd rather skip a match than guess.</span></div>
+      </div>
+      <div class="pledge-line">
+        <div class="pledge-check">✓</div>
+        <div class="pledge-text"><strong>Most matches are rejected before publication.</strong><span>Publishing fewer picks is intentional.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">What to expect</div>
+    <h2>Simple, and honest about what each tier gets you.</h2>
+    <div class="expect-grid">
+      <div class="expect-card">
+        <div class="expect-tier">Free</div>
+        <div class="expect-price">₦0</div>
+        <div class="expect-list">
+          1 teaser pick daily<br>
+          Public results — always visible<br>
+          No reasoning shown
+        </div>
+      </div>
+      <div class="expect-card highlight">
+        <div class="expect-tier">Pro</div>
+        <div class="expect-price">₦2,500<span>/month</span></div>
+        <div class="expect-list">
+          Up to 5 picks daily, ranked by confidence<br>
+          Full reasoning + risk notes on every pick<br>
+          Unit stake guidance<br>
+          Multi-league coverage
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer-cta">
+  <div class="wrap">
+    <h2>See the actual track record before you decide anything.</h2>
+    <p>Every pick, every result, every zero-pick day — it's all public. Judge it yourself.</p>
+    <a href="index.html" class="btn-primary">View live results</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>SlipScan Picks — Statistical football analysis backed by real match data. Not financial advice. 18+ only. Bet responsibly.<br>
+    Every result — won or lost — stays on the public record. Always.</p>
+  </div>
+</footer>
+
+<script>
+function toggleTheme() {
+  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  if (isLight) {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('slipscan-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('slipscan-theme', 'light');
+  }
+}
+</script>
+
+</body>
+</html>

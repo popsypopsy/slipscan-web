@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SlipScan Picks — AI Football Analysis</title>
-<meta name="description" content="AI-assisted football pick analysis backed by real match stats. Honest zero-pick days. Every result tracked publicly.">
+<title>SlipScan Picks — Football Analysis You Can Verify</title>
+<meta name="description" content="Statistical football pick analysis backed by real match data and probability modeling. Honest zero-pick days. Every result tracked publicly.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -13,8 +13,8 @@
 
 <!-- Open Graph (WhatsApp, Telegram, Facebook link previews) -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="SlipScan Picks — AI Football Analysis">
-<meta property="og:description" content="AI-assisted football pick analysis backed by real match stats. Honest zero-pick days. Every result tracked publicly. 78% minimum confidence.">
+<meta property="og:title" content="SlipScan Picks — Football Analysis You Can Verify">
+<meta property="og:description" content="Statistical football pick analysis backed by real match data. Honest zero-pick days. Every result tracked publicly. 78% minimum confidence.">
 <meta property="og:image" content="og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,8 +22,8 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SlipScan Picks — AI Football Analysis">
-<meta name="twitter:description" content="AI-assisted football pick analysis backed by real match stats. Honest zero-pick days.">
+<meta name="twitter:title" content="SlipScan Picks — Football Analysis You Can Verify">
+<meta name="twitter:description" content="Statistical football pick analysis backed by real match data. Honest zero-pick days.">
 <meta name="twitter:image" content="og-image.png">
 <script>
   // Runs before first paint — sets the right theme immediately, no flash.
@@ -397,7 +397,7 @@ footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);fo
   </div>
   <div class="tg-cta" style="margin-top:0">
     <h3>Get picks before kickoff</h3>
-    <p>Free channel for a daily teaser. Pro group for the full breakdown — real stats, confidence, AI-checked reasoning, and unit stake on every pick.</p>
+    <p>Free channel for a daily teaser. Pro group for the full breakdown — real stats, confidence, double-checked reasoning, and unit stake on every pick.</p>
     <button class="tg-btn">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.247l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L6.54 14.46l-2.95-.924c-.642-.2-.654-.642.136-.953l11.52-4.44c.537-.194 1.006.131.316.104z"/></svg>
       Join Free Channel
@@ -418,7 +418,7 @@ footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);fo
         <div class="tg-plan-price">₦2,500<span style="font-size:12px;color:var(--muted)">/mo</span></div>
         <div class="tg-plan-features">
           Up to 5 picks daily, ranked by confidence<br>
-          Full AI reasoning + risk notes<br>
+          Full reasoning + risk notes<br>
           Unit stake guidance<br>
           Multi-league coverage
         </div>
@@ -447,7 +447,7 @@ footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);fo
 
 <footer>
   <div style="font-weight:600;color:var(--text);margin-bottom:6px">SlipScan Picks</div>
-  AI-assisted analysis backed by real match stats. Not financial advice. 18+ only. Bet responsibly.<br>
+  Statistical analysis backed by real match data. Not financial advice. 18+ only. Bet responsibly.<br>
   Every result — won or lost — stays on the public record. Always. Min confidence to ship: 78%.
 </footer>
 
@@ -552,7 +552,7 @@ function buildPickCard(pick, index) {
     : '';
 
   var reasoningHtml = pick.reasoning
-    ? '<div class="reasoning-box"><div class="reasoning-label">AI reasoning</div>' + esc(pick.reasoning) + '</div>'
+    ? '<div class="reasoning-box"><div class="reasoning-label">Reasoning</div>' + esc(pick.reasoning) + '</div>'
     : '';
 
   return (
