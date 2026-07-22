@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SlipScan Research — Internal</title>
+<meta name="robots" content="noindex, nofollow">
+
+<script>
+  (function() {
+    var saved = localStorage.getItem('slipscan-theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  })();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07070E;--surface:#10101A;--card:#171722;
+  --green:#00E87A;--green-dim:rgba(0,232,122,0.1);--green-mid:rgba(0,232,122,0.18);
+  --red:#FF4156;--red-dim:rgba(255,65,86,0.1);
+  --yellow:#FFB800;--yellow-dim:rgba(255,184,0,0.1);
+  --blue:#3B82F6;--blue-dim:rgba(59,130,246,0.12);
+  --purple:#A78BFA;--purple-dim:rgba(167,139,250,0.1);
+  --text:#EEEEF5;--muted:#5A5A72;--muted-dim:rgba(90,90,114,0.2);--border:rgba(255,255,255,0.06);
+  --font-display:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace;
+}
+[data-theme="light"]{
+  --bg:#F5F6F8;--surface:#FFFFFF;--card:#FFFFFF;
+  --green:#00A85E;--green-dim:rgba(0,168,94,0.08);--green-mid:rgba(0,168,94,0.14);
+  --red:#DC2626;--red-dim:rgba(220,38,38,0.07);
+  --yellow:#B45309;--yellow-dim:rgba(180,83,9,0.08);
+  --blue:#2563EB;--blue-dim:rgba(37,99,235,0.08);
+  --purple:#7C3AED;--purple-dim:rgba(124,58,237,0.07);
+  --text:#0F1115;--muted:#6B7280;--muted-dim:rgba(107,114,128,0.12);--border:rgba(0,0,0,0.08);
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.5}
+*:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px 60px}
+
+nav{border-bottom:1px solid var(--border);padding:16px 0;margin-bottom:20px}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-bottom:0}
+.logo{font-family:var(--font-display);font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px}
+.logo-dot{width:7px;height:7px;border-radius:50%;background:var(--purple)}
+.badge-internal{font-family:var(--font-mono);font-size:10px;background:var(--purple-dim);color:var(--purple);padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:0.5px}
+.theme-toggle{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:none;border:1px solid var(--border);color:var(--muted);cursor:pointer}
+.theme-toggle .icon-moon{display:block}.theme-toggle .icon-sun{display:none}
+[data-theme="light"] .theme-toggle .icon-moon{display:none}[data-theme="light"] .theme-toggle .icon-sun{display:block}
+
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.control-group{display:flex;flex-direction:column;gap:5px}
+.control-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px}
+select,input[type="date"]{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:8px 10px;border-radius:8px;font-family:var(--font-body);font-size:13px}
+.quick-btns{display:flex;gap:6px}
+.quick-btn{background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:8px 14px;border-radius:8px;font-size:13px;cursor:pointer;font-family:var(--font-body)}
+.quick-btn.active{background:var(--green-dim);border-color:rgba(0,232,122,0.3);color:var(--green);font-weight:600}
+
+.ticker{display:flex;gap:22px;overflow-x:auto;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:20px}
+.ticker-item{display:flex;flex-direction:column;gap:2px;min-width:fit-content}
+.ticker-value{font-family:var(--font-mono);font-size:19px;font-weight:600}
+.ticker-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px}
+
+.table-wrap{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:900px}
+th{text-align:left;padding:10px 12px;font-family:var(--font-mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid var(--border);white-space:nowrap;position:sticky;top:0;background:var(--card)}
+td{padding:10px 12px;border-bottom:1px solid var(--border);white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,0.02)}
+.pill{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;font-family:var(--font-mono)}
+.pill-win{background:var(--green-dim);color:var(--green)}
+.pill-loss{background:var(--red-dim);color:var(--red)}
+.pill-pending{background:var(--yellow-dim);color:var(--yellow)}
+.pill-void{background:var(--muted-dim);color:var(--muted)}
+.pill-publish{background:var(--green-dim);color:var(--green)}
+.pill-reject{background:var(--muted-dim);color:var(--muted)}
+.no-data{text-align:center;padding:50px 20px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo"><div class="logo-dot"></div>SlipScan Research<span class="badge-internal" style="margin-left:8px">Internal</span></div>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="control-group">
+      <span class="control-label">Dataset</span>
+      <select id="dataset-select" onchange="onDatasetChange()">
+        <option value="experiment">Experiment (Engine vs Engine+Claude)</option>
+        <option value="test_mode">Test Mode (Engine only, all markets)</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <span class="control-label">Quick range</span>
+      <div class="quick-btns">
+        <button class="quick-btn active" data-range="today" onclick="setQuickRange('today')">Today</button>
+        <button class="quick-btn" data-range="yesterday" onclick="setQuickRange('yesterday')">Yesterday</button>
+        <button class="quick-btn" data-range="7d" onclick="setQuickRange('7d')">Last 7d</button>
+        <button class="quick-btn" data-range="all" onclick="setQuickRange('all')">All time</button>
+      </div>
+    </div>
+    <div class="control-group">
+      <span class="control-label">From</span>
+      <input type="date" id="date-from" onchange="onCustomDateChange()">
+    </div>
+    <div class="control-group">
+      <span class="control-label">To</span>
+      <input type="date" id="date-to" onchange="onCustomDateChange()">
+    </div>
+    <div class="control-group">
+      <span class="control-label">Result</span>
+      <select id="result-filter" onchange="renderAll()">
+        <option value="all">All</option>
+        <option value="PENDING">Pending</option>
+        <option value="WIN">Win</option>
+        <option value="LOSS">Loss</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="ticker" id="ticker"></div>
+
+  <div class="table-wrap">
+    <table id="data-table">
+      <thead id="table-head"></thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+var currentData = [];
+var currentSource = 'experiment';
+
+function toggleTheme() {
+  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+  if (isLight) { document.documentElement.removeAttribute('data-theme'); localStorage.setItem('slipscan-theme', 'dark'); }
+  else { document.documentElement.setAttribute('data-theme', 'light'); localStorage.setItem('slipscan-theme', 'light'); }
+}
+
+function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+
+function lagosToday() {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Lagos', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+}
+function addDays(dateStr, n) {
+  var d = new Date(dateStr + 'T00:00:00Z');
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+}
+
+function setQuickRange(range) {
+  document.querySelectorAll('.quick-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.range === range); });
+  var today = lagosToday();
+  var from = '', to = '';
+  if (range === 'today') { from = today; to = today; }
+  else if (range === 'yesterday') { from = addDays(today, -1); to = addDays(today, -1); }
+  else if (range === '7d') { from = addDays(today, -7); to = today; }
+  else if (range === 'all') { from = ''; to = ''; }
+  document.getElementById('date-from').value = from;
+  document.getElementById('date-to').value = to;
+  renderAll();
+}
+
+function onCustomDateChange() {
+  document.querySelectorAll('.quick-btn').forEach(function(b) { b.classList.remove('active'); });
+  renderAll();
+}
+
+function getDateField(record) { return record.date || record.fixture_date || ''; }
+
+function onDatasetChange() {
+  currentSource = document.getElementById('dataset-select').value;
+  loadData();
+}
+
+function loadData() {
+  var file = currentSource === 'experiment' ? './data/experiment_history.json' : './data/test_mode_history.json';
+  fetch(file, { cache: 'no-store' })
+    .then(function(r) { if (!r.ok) throw new Error('Not found (' + r.status + ')'); return r.json(); })
+    .then(function(data) { currentData = Array.isArray(data) ? data : []; renderAll(); })
+    .catch(function(err) {
+      currentData = [];
+      document.getElementById('table-body').innerHTML = '<tr><td colspan="10" class="no-data">Could not load ' + esc(file) + ': ' + esc(err.message) + '</td></tr>';
+      document.getElementById('ticker').innerHTML = '';
+    });
+}
+
+function applyFilters() {
+  var from = document.getElementById('date-from').value;
+  var to = document.getElementById('date-to').value;
+  var resultFilter = document.getElementById('result-filter').value;
+
+  return currentData.filter(function(r) {
+    var d = getDateField(r);
+    if (from && d < from) return false;
+    if (to && d > to) return false;
+    if (resultFilter !== 'all' && r.result !== resultFilter) return false;
+    return true;
+  });
+}
+
+function renderTicker(filtered) {
+  var total = filtered.length;
+  var pending = filtered.filter(function(r) { return r.result === 'PENDING'; }).length;
+  var decided = filtered.filter(function(r) { return r.result === 'WIN' || r.result === 'LOSS'; });
+  var wins = decided.filter(function(r) { return r.result === 'WIN'; }).length;
+  var winRate = decided.length ? Math.round(wins / decided.length * 100) : null;
+
+  var items = [
+    ['Total', total], ['Pending', pending], ['Settled', decided.length],
+    ['Win Rate', winRate != null ? winRate + '%' : '—'],
+  ];
+
+  if (currentSource === 'experiment') {
+    var aPub = filtered.filter(function(r) { return r.track_a && r.track_a.decision === 'PUBLISH'; });
+    var bPub = filtered.filter(function(r) { return r.track_b && r.track_b.decision === 'PUBLISH'; });
+    items.push(['Track A Publish', aPub.length], ['Track B Publish', bPub.length]);
+  }
+
+  document.getElementById('ticker').innerHTML = items.map(function(it) {
+    return '<div class="ticker-item"><span class="ticker-value">' + esc(it[1]) + '</span><span class="ticker-label">' + esc(it[0]) + '</span></div>';
+  }).join('');
+}
+
+function pillClass(result) {
+  if (result === 'WIN') return 'pill-win';
+  if (result === 'LOSS') return 'pill-loss';
+  if (result === 'VOID') return 'pill-void';
+  return 'pill-pending';
+}
+
+function decisionPill(decision) {
+  if (!decision) return '<span class="pill pill-pending">—</span>';
+  var cls = decision.decision === 'PUBLISH' ? 'pill-publish' : 'pill-reject';
+  return '<span class="pill ' + cls + '">' + esc(decision.decision) + '</span>';
+}
+
+function renderTable(filtered) {
+  var head = document.getElementById('table-head');
+  var body = document.getElementById('table-body');
+
+  if (currentSource === 'experiment') {
+    head.innerHTML = '<tr><th>Date</th><th>Match</th><th>Market</th><th>Side</th><th>Confidence</th>' +
+      '<th>Track A</th><th>Track B</th><th>Claude Verdict</th><th>Published</th><th>Result</th></tr>';
+
+    if (!filtered.length) {
+      body.innerHTML = '<tr><td colspan="10" class="no-data">No records match these filters.</td></tr>';
+      return;
+    }
+    body.innerHTML = filtered.map(function(r) {
+      return '<tr>' +
+        '<td>' + esc(r.date) + '</td>' +
+        '<td>' + esc(r.home_team) + ' vs ' + esc(r.away_team) + '</td>' +
+        '<td>' + esc(r.market_name) + '</td>' +
+        '<td>' + esc(r.selection) + '</td>' +
+        '<td>' + esc(r.engine_confidence) + '%</td>' +
+        '<td>' + decisionPill(r.track_a) + '</td>' +
+        '<td>' + decisionPill(r.track_b) + '</td>' +
+        '<td>' + esc(r.track_b ? r.track_b.claude_verdict : '—') + '</td>' +
+        '<td>' + (r.actually_published_production ? '✓' : '') + '</td>' +
+        '<td><span class="pill ' + pillClass(r.result) + '">' + esc(r.result) + '</span></td>' +
+        '</tr>';
+    }).join('');
+  } else {
+    head.innerHTML = '<tr><th>Date</th><th>Match</th><th>Competition</th><th>Market</th><th>Selection</th>' +
+      '<th>Confidence</th><th>Result</th></tr>';
+
+    if (!filtered.length) {
+      body.innerHTML = '<tr><td colspan="7" class="no-data">No records match these filters.</td></tr>';
+      return;
+    }
+    body.innerHTML = filtered.map(function(r) {
+      return '<tr>' +
+        '<td>' + esc(r.fixture_date) + '</td>' +
+        '<td>' + esc(r.home_team) + ' vs ' + esc(r.away_team) + '</td>' +
+        '<td>' + esc(r.competition) + '</td>' +
+        '<td>' + esc(r.market_name) + '</td>' +
+        '<td>' + esc(r.selection) + '</td>' +
+        '<td>' + esc(r.confidence) + '%</td>' +
+        '<td><span class="pill ' + pillClass(r.result) + '">' + esc(r.result) + '</span></td>' +
+        '</tr>';
+    }).join('');
+  }
+}
+
+function renderAll() {
+  var filtered = applyFilters();
+  filtered.sort(function(a, b) { return getDateField(b).localeCompare(getDateField(a)); });
+  renderTicker(filtered);
+  renderTable(filtered);
+}
+
+window.onload = function() {
+  setQuickRange('today');
+  loadData();
+};
+</script>
+
+</body>
+</html>
