@@ -94,12 +94,96 @@ tr:hover td{background:rgba(255,255,255,0.02)}
 .no-data{text-align:center;padding:50px 20px;color:var(--muted)}
 @media(max-width:900px){.research-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:560px){.research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wrap{padding-left:12px;padding-right:12px}}
+
+/* Responsive dashboard layer — preserves existing data and analytics logic */
+.mobile-filter-toggle{display:none;width:100%;align-items:center;justify-content:space-between;padding:12px 14px;margin-bottom:10px;background:var(--card);border:1px solid var(--border);border-radius:12px;color:var(--text);font:600 13px var(--font-display);cursor:pointer}
+.mobile-filter-toggle .chevron{transition:transform .2s ease}
+.mobile-filter-toggle[aria-expanded="true"] .chevron{transform:rotate(180deg)}
+
+@media (min-width:901px){
+  .wrap{max-width:1440px}
+  .controls{display:grid;grid-template-columns:minmax(250px,1.45fr) minmax(310px,1.7fr) minmax(135px,.8fr) minmax(135px,.8fr) minmax(130px,.7fr);align-items:end}
+  .control-group{min-width:0}
+  select,input[type="date"]{width:100%}
+  .ticker{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;overflow:visible}
+  .ticker-item{min-width:0}
+  .table-wrap{overflow-x:hidden}
+  table{min-width:0;table-layout:fixed}
+  th,td{padding:10px 9px}
+  #data-table th:nth-child(1),#data-table td:nth-child(1){width:8%}
+  #data-table th:nth-child(2),#data-table td:nth-child(2){width:22%}
+  #data-table th:nth-child(3),#data-table td:nth-child(3){width:14%}
+  #data-table th:nth-child(4),#data-table td:nth-child(4){width:7%}
+  #data-table th:nth-child(5),#data-table td:nth-child(5){width:10%}
+  #data-table th:nth-child(6),#data-table td:nth-child(6){width:9%}
+  #data-table th:nth-child(7),#data-table td:nth-child(7){width:9%}
+  #data-table th:nth-child(8),#data-table td:nth-child(8){width:11%}
+  #data-table th:nth-child(9),#data-table td:nth-child(9){width:10%}
+  #data-table th:nth-child(10),#data-table td:nth-child(10){width:9%}
+  .match-main,.match-sub{white-space:normal}
+}
+
+@media (max-width:900px){
+  .wrap{padding-left:14px;padding-right:14px}
+  nav{margin-bottom:14px}
+  nav .wrap{padding-top:0}
+  .mobile-filter-toggle{display:flex}
+  .controls{display:none;margin-bottom:14px;padding:12px}
+  .controls.is-open{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .controls .control-group:first-child,.controls .control-group:nth-child(2){grid-column:1/-1}
+  .quick-btns{display:grid;grid-template-columns:repeat(4,1fr)}
+  .quick-btn{padding:8px 6px;font-size:12px}
+  select,input[type="date"]{width:100%;min-width:0}
+  .ticker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:0;background:transparent;border:0;overflow:visible}
+  .ticker-item{align-items:center;text-align:center;justify-content:center;min-width:0;padding:12px 8px;background:var(--card);border:1px solid var(--border);border-radius:10px}
+  .ticker-value{font-size:17px}
+  .ticker-label{font-size:9px}
+  .research-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .research-card{text-align:center;padding:12px 8px}
+  .research-card .value{font-size:16px}
+  .research-card .label{font-size:9px}
+  .analysis-section{margin-bottom:8px}
+  .analysis-section summary{padding:12px 14px}
+  .table-wrap{overflow-x:hidden}
+  table{min-width:0;table-layout:fixed;font-size:11px}
+  th,td{padding:9px 6px;white-space:normal;vertical-align:top}
+  th{font-size:8px}
+  .col-side,.col-track-a,.col-track-b,.col-claude,.col-published{display:none}
+  .col-date{width:15%}
+  .col-match{width:35%}
+  .col-market{width:19%}
+  .col-confidence{width:14%}
+  .col-result{width:17%;text-align:right}
+  .match-main{font-size:10px;line-height:1.25;overflow-wrap:anywhere}
+  .match-sub{font-size:9px;line-height:1.2}
+  .confidence{font-size:10px}
+  .pill{display:inline-block;padding:2px 6px;font-size:9px;white-space:nowrap}
+  .mini-table{min-width:620px}
+}
+
+@media (max-width:560px){
+  .logo{font-size:14px}
+  .badge-internal{font-size:8px;padding:2px 7px}
+  .controls.is-open{grid-template-columns:1fr}
+  .controls .control-group{grid-column:1/-1}
+  .ticker{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .research-card:last-child:nth-child(odd){grid-column:1/-1}
+  .analysis-section summary{font-size:12px}
+  .col-date{width:16%}
+  .col-match{width:34%}
+  .col-market{width:18%}
+  .col-confidence{width:15%}
+  .col-result{width:17%}
+}
+
 </style>
 </head>
 <body>
 <nav><div class="wrap"><div class="logo"><div class="logo-dot"></div>SlipScan Research<span class="badge-internal" style="margin-left:8px">Internal</span></div><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></div></nav>
 <div class="wrap">
-  <div class="controls">
+  <button class="mobile-filter-toggle" type="button" aria-expanded="false" aria-controls="research-controls" onclick="toggleMobileFilters()"><span>Filters &amp; Range</span><span class="chevron">⌄</span></button>
+  <div class="controls" id="research-controls">
     <div class="control-group"><span class="control-label">Dataset</span><select id="dataset-select" onchange="onDatasetChange()"><option value="experiment">Experiment (Engine vs Engine+Claude)</option><option value="test_mode">Test Mode (Engine only, all markets)</option></select></div>
     <div class="control-group"><span class="control-label">Quick range</span><div class="quick-btns"><button class="quick-btn active" data-range="today" onclick="setQuickRange('today')">Today</button><button class="quick-btn" data-range="yesterday" onclick="setQuickRange('yesterday')">Yesterday</button><button class="quick-btn" data-range="7d" onclick="setQuickRange('7d')">Last 7d</button><button class="quick-btn" data-range="all" onclick="setQuickRange('all')">All time</button></div></div>
     <div class="control-group"><span class="control-label">From</span><input type="date" id="date-from" onchange="onCustomDateChange()"></div>
@@ -114,6 +198,7 @@ tr:hover td{background:rgba(255,255,255,0.02)}
 <script>
 var currentData=[];var currentSource='experiment';
 function toggleTheme(){var isLight=document.documentElement.getAttribute('data-theme')==='light';if(isLight){document.documentElement.removeAttribute('data-theme');localStorage.setItem('slipscan-theme','dark')}else{document.documentElement.setAttribute('data-theme','light');localStorage.setItem('slipscan-theme','light')}}
+function toggleMobileFilters(){var controls=document.getElementById('research-controls'),button=document.querySelector('.mobile-filter-toggle');var open=controls.classList.toggle('is-open');button.setAttribute('aria-expanded',open?'true':'false')}
 function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML}
 function pct(n,d,decimals){return d?((n/d)*100).toFixed(decimals==null?1:decimals)+'%':'—'}
 function avg(values){var valid=values.filter(function(v){return Number.isFinite(Number(v))}).map(Number);return valid.length?valid.reduce(function(a,b){return a+b},0)/valid.length:null}
@@ -145,7 +230,7 @@ function verdictPill(trackB){if(!trackB)return'<span class="pill pill-notrun">NO
 function confidenceHtml(value){var n=Number(value);if(!Number.isFinite(n))return'—';var cls=n>=90?'conf-90':n>=80?'conf-80':n>=70?'conf-70':'conf-60';return'<span class="confidence '+cls+'">'+n.toFixed(2)+'%</span>'}
 function publishedHtml(r){if(r.actually_published_production)return'<span class="published-label">Production</span>';if(r.would_be_top5_engine_only)return'<span class="published-label">Engine Top 5</span>';return'<span class="published-label" style="color:var(--muted)">—</span>'}
 function matchHtml(r){var competition=r.competition||'';return'<div class="match-main">'+esc(r.home_team)+' vs '+esc(r.away_team)+'</div>'+(competition?'<div class="match-sub">'+esc(competition)+'</div>':'')}
-function renderTable(filtered){var head=document.getElementById('table-head'),body=document.getElementById('table-body');if(currentSource==='experiment'){head.innerHTML='<tr><th>Date</th><th>Match</th><th>Market</th><th>Side</th><th>Confidence</th><th>Track A</th><th>Track B</th><th>Claude Verdict</th><th>Published</th><th>Result</th></tr>';if(!filtered.length){body.innerHTML='<tr><td colspan="10" class="no-data">No records match these filters.</td></tr>';return}body.innerHTML=filtered.map(function(r){return'<tr><td>'+esc(r.date)+'</td><td>'+matchHtml(r)+'</td><td>'+esc(r.market_name)+'</td><td>'+esc(r.selection)+'</td><td>'+confidenceHtml(r.engine_confidence)+'</td><td>'+decisionPill(r.track_a)+'</td><td>'+decisionPill(r.track_b)+'</td><td>'+verdictPill(r.track_b)+'</td><td>'+publishedHtml(r)+'</td><td><span class="pill '+pillClass(r.result)+'">'+esc(r.result)+'</span></td></tr>'}).join('')}else{head.innerHTML='<tr><th>Date</th><th>Match</th><th>Competition</th><th>Market</th><th>Selection</th><th>Confidence</th><th>Result</th></tr>';if(!filtered.length){body.innerHTML='<tr><td colspan="7" class="no-data">No records match these filters.</td></tr>';return}body.innerHTML=filtered.map(function(r){return'<tr><td>'+esc(r.fixture_date)+'</td><td>'+matchHtml(r)+'</td><td>'+esc(r.competition)+'</td><td>'+esc(r.market_name)+'</td><td>'+esc(r.selection)+'</td><td>'+confidenceHtml(r.confidence)+'</td><td><span class="pill '+pillClass(r.result)+'">'+esc(r.result)+'</span></td></tr>'}).join('')}}
+function renderTable(filtered){var head=document.getElementById('table-head'),body=document.getElementById('table-body');if(currentSource==='experiment'){head.innerHTML='<tr><th class="col-date">Date</th><th class="col-match">Match</th><th class="col-market">Market</th><th class="col-side">Side</th><th class="col-confidence">Confidence</th><th class="col-track-a">Track A</th><th class="col-track-b">Track B</th><th class="col-claude">Claude Verdict</th><th class="col-published">Published</th><th class="col-result">Result</th></tr>';if(!filtered.length){body.innerHTML='<tr><td colspan="10" class="no-data">No records match these filters.</td></tr>';return}body.innerHTML=filtered.map(function(r){return'<tr><td class="col-date">'+esc(r.date)+'</td><td class="col-match">'+matchHtml(r)+'</td><td class="col-market">'+esc(r.market_name)+'</td><td class="col-side">'+esc(r.selection)+'</td><td class="col-confidence">'+confidenceHtml(r.engine_confidence)+'</td><td class="col-track-a">'+decisionPill(r.track_a)+'</td><td class="col-track-b">'+decisionPill(r.track_b)+'</td><td class="col-claude">'+verdictPill(r.track_b)+'</td><td class="col-published">'+publishedHtml(r)+'</td><td class="col-result"><span class="pill '+pillClass(r.result)+'">'+esc(r.result)+'</span></td></tr>'}).join('')}else{head.innerHTML='<tr><th class="col-date">Date</th><th class="col-match">Match</th><th class="col-competition">Competition</th><th class="col-market">Market</th><th class="col-side">Selection</th><th class="col-confidence">Confidence</th><th class="col-result">Result</th></tr>';if(!filtered.length){body.innerHTML='<tr><td colspan="7" class="no-data">No records match these filters.</td></tr>';return}body.innerHTML=filtered.map(function(r){return'<tr><td class="col-date">'+esc(r.fixture_date)+'</td><td class="col-match">'+matchHtml(r)+'</td><td class="col-competition">'+esc(r.competition)+'</td><td class="col-market">'+esc(r.market_name)+'</td><td class="col-side">'+esc(r.selection)+'</td><td class="col-confidence">'+confidenceHtml(r.confidence)+'</td><td class="col-result"><span class="pill '+pillClass(r.result)+'">'+esc(r.result)+'</span></td></tr>'}).join('')}}
 function renderAll(){var filtered=applyFilters();filtered.sort(function(a,b){return getDateField(b).localeCompare(getDateField(a))});renderTicker(filtered);renderResearchSummary(filtered);renderAnalysisPanels(filtered);renderTable(filtered)}
 window.onload=function(){setQuickRange('today');loadData()};
 </script>
