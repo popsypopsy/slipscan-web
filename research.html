@@ -39,7 +39,6 @@
 body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.5}
 *:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 .wrap{max-width:1200px;margin:0 auto;padding:0 20px 60px}
-
 nav{border-bottom:1px solid var(--border);padding:16px 0;margin-bottom:20px}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-bottom:0}
 .logo{font-family:var(--font-display);font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px}
@@ -48,7 +47,6 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .theme-toggle{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:none;border:1px solid var(--border);color:var(--muted);cursor:pointer}
 .theme-toggle .icon-moon{display:block}.theme-toggle .icon-sun{display:none}
 [data-theme="light"] .theme-toggle .icon-moon{display:none}[data-theme="light"] .theme-toggle .icon-sun{display:block}
-
 .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:12px}
 .control-group{display:flex;flex-direction:column;gap:5px}
 .control-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px}
@@ -56,255 +54,100 @@ select,input[type="date"]{background:var(--surface);border:1px solid var(--borde
 .quick-btns{display:flex;gap:6px}
 .quick-btn{background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:8px 14px;border-radius:8px;font-size:13px;cursor:pointer;font-family:var(--font-body)}
 .quick-btn.active{background:var(--green-dim);border-color:rgba(0,232,122,0.3);color:var(--green);font-weight:600}
-
 .ticker{display:flex;gap:22px;overflow-x:auto;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:20px}
 .ticker-item{display:flex;flex-direction:column;gap:2px;min-width:fit-content}
 .ticker-value{font-family:var(--font-mono);font-size:19px;font-weight:600}
 .ticker-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px}
-
+.research-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-bottom:20px}
+.research-card{padding:14px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.research-card .value{font:600 17px var(--font-mono);margin-bottom:3px}
+.research-card .label{font:10px var(--font-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.analysis-section{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.analysis-section summary{list-style:none;cursor:pointer;padding:14px 16px;font:600 13px var(--font-display);display:flex;justify-content:space-between;align-items:center}
+.analysis-section summary::-webkit-details-marker{display:none}
+.analysis-section summary::after{content:'+';font:600 18px var(--font-mono);color:var(--muted)}
+.analysis-section[open] summary::after{content:'−'}
+.analysis-body{padding:0 16px 16px}
+.analysis-note{font-size:12px;color:var(--muted);margin-bottom:10px}
+.mini-table{width:100%;border-collapse:collapse;font-size:12px;min-width:700px}
+.mini-table th,.mini-table td{padding:8px 9px}
+.mini-table-wrap{overflow-x:auto}
+.sample{font:600 10px var(--font-mono);text-transform:uppercase;letter-spacing:.4px;color:var(--muted)}
+.bar-track{height:6px;background:var(--muted-dim);border-radius:10px;overflow:hidden;min-width:90px}
+.bar-fill{height:100%;background:var(--blue);border-radius:10px}
+.warning-list{display:grid;gap:7px;font-size:12px;color:var(--muted)}
 .table-wrap{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:13px;min-width:900px}
 th{text-align:left;padding:10px 12px;font-family:var(--font-mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid var(--border);white-space:nowrap;position:sticky;top:0;background:var(--card)}
 td{padding:10px 12px;border-bottom:1px solid var(--border);white-space:nowrap}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:rgba(255,255,255,0.02)}
+.match-main{font-weight:500}.match-sub{font-size:11px;color:var(--muted);margin-top:2px}
 .pill{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;font-family:var(--font-mono)}
-.pill-win{background:var(--green-dim);color:var(--green)}
-.pill-loss{background:var(--red-dim);color:var(--red)}
-.pill-pending{background:var(--yellow-dim);color:var(--yellow)}
-.pill-void{background:var(--muted-dim);color:var(--muted)}
-.pill-publish{background:var(--green-dim);color:var(--green)}
-.pill-reject{background:var(--muted-dim);color:var(--muted)}
+.pill-win,.pill-publish,.pill-confirm{background:var(--green-dim);color:var(--green)}
+.pill-loss,.pill-unavailable{background:var(--red-dim);color:var(--red)}
+.pill-pending,.pill-caution{background:var(--yellow-dim);color:var(--yellow)}
+.pill-void,.pill-reject,.pill-notrun{background:var(--muted-dim);color:var(--muted)}
+.confidence{font:600 12px var(--font-mono)}
+.conf-60{color:var(--yellow)}.conf-70{color:var(--blue)}.conf-80{color:var(--green)}.conf-90{color:var(--purple)}
+.published-label{font:600 10px var(--font-mono);text-transform:uppercase;letter-spacing:.35px}
 .no-data{text-align:center;padding:50px 20px;color:var(--muted)}
+@media(max-width:900px){.research-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.research-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wrap{padding-left:12px;padding-right:12px}}
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="wrap">
-    <div class="logo"><div class="logo-dot"></div>SlipScan Research<span class="badge-internal" style="margin-left:8px">Internal</span></div>
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-      <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-      <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
-  </div>
-</nav>
-
+<nav><div class="wrap"><div class="logo"><div class="logo-dot"></div>SlipScan Research<span class="badge-internal" style="margin-left:8px">Internal</span></div><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></div></nav>
 <div class="wrap">
   <div class="controls">
-    <div class="control-group">
-      <span class="control-label">Dataset</span>
-      <select id="dataset-select" onchange="onDatasetChange()">
-        <option value="experiment">Experiment (Engine vs Engine+Claude)</option>
-        <option value="test_mode">Test Mode (Engine only, all markets)</option>
-      </select>
-    </div>
-    <div class="control-group">
-      <span class="control-label">Quick range</span>
-      <div class="quick-btns">
-        <button class="quick-btn active" data-range="today" onclick="setQuickRange('today')">Today</button>
-        <button class="quick-btn" data-range="yesterday" onclick="setQuickRange('yesterday')">Yesterday</button>
-        <button class="quick-btn" data-range="7d" onclick="setQuickRange('7d')">Last 7d</button>
-        <button class="quick-btn" data-range="all" onclick="setQuickRange('all')">All time</button>
-      </div>
-    </div>
-    <div class="control-group">
-      <span class="control-label">From</span>
-      <input type="date" id="date-from" onchange="onCustomDateChange()">
-    </div>
-    <div class="control-group">
-      <span class="control-label">To</span>
-      <input type="date" id="date-to" onchange="onCustomDateChange()">
-    </div>
-    <div class="control-group">
-      <span class="control-label">Result</span>
-      <select id="result-filter" onchange="renderAll()">
-        <option value="all">All</option>
-        <option value="PENDING">Pending</option>
-        <option value="WIN">Win</option>
-        <option value="LOSS">Loss</option>
-      </select>
-    </div>
+    <div class="control-group"><span class="control-label">Dataset</span><select id="dataset-select" onchange="onDatasetChange()"><option value="experiment">Experiment (Engine vs Engine+Claude)</option><option value="test_mode">Test Mode (Engine only, all markets)</option></select></div>
+    <div class="control-group"><span class="control-label">Quick range</span><div class="quick-btns"><button class="quick-btn active" data-range="today" onclick="setQuickRange('today')">Today</button><button class="quick-btn" data-range="yesterday" onclick="setQuickRange('yesterday')">Yesterday</button><button class="quick-btn" data-range="7d" onclick="setQuickRange('7d')">Last 7d</button><button class="quick-btn" data-range="all" onclick="setQuickRange('all')">All time</button></div></div>
+    <div class="control-group"><span class="control-label">From</span><input type="date" id="date-from" onchange="onCustomDateChange()"></div>
+    <div class="control-group"><span class="control-label">To</span><input type="date" id="date-to" onchange="onCustomDateChange()"></div>
+    <div class="control-group"><span class="control-label">Result</span><select id="result-filter" onchange="renderAll()"><option value="all">All</option><option value="PENDING">Pending</option><option value="WIN">Win</option><option value="LOSS">Loss</option><option value="VOID">Void</option></select></div>
   </div>
-
   <div class="ticker" id="ticker"></div>
-
-  <div class="table-wrap">
-    <table id="data-table">
-      <thead id="table-head"></thead>
-      <tbody id="table-body"></tbody>
-    </table>
-  </div>
+  <div class="research-grid" id="research-summary"></div>
+  <div id="analysis-panels"></div>
+  <div class="table-wrap"><table id="data-table"><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
 </div>
-
 <script>
-var currentData = [];
-var currentSource = 'experiment';
-
-function toggleTheme() {
-  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
-  if (isLight) { document.documentElement.removeAttribute('data-theme'); localStorage.setItem('slipscan-theme', 'dark'); }
-  else { document.documentElement.setAttribute('data-theme', 'light'); localStorage.setItem('slipscan-theme', 'light'); }
-}
-
-function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
-
-function lagosToday() {
-  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Lagos', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-}
-function addDays(dateStr, n) {
-  var d = new Date(dateStr + 'T00:00:00Z');
-  d.setUTCDate(d.getUTCDate() + n);
-  return d.toISOString().slice(0, 10);
-}
-
-function setQuickRange(range) {
-  document.querySelectorAll('.quick-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.range === range); });
-  var today = lagosToday();
-  var from = '', to = '';
-  if (range === 'today') { from = today; to = today; }
-  else if (range === 'yesterday') { from = addDays(today, -1); to = addDays(today, -1); }
-  else if (range === '7d') { from = addDays(today, -7); to = today; }
-  else if (range === 'all') { from = ''; to = ''; }
-  document.getElementById('date-from').value = from;
-  document.getElementById('date-to').value = to;
-  renderAll();
-}
-
-function onCustomDateChange() {
-  document.querySelectorAll('.quick-btn').forEach(function(b) { b.classList.remove('active'); });
-  renderAll();
-}
-
-function getDateField(record) { return record.date || record.fixture_date || ''; }
-
-function onDatasetChange() {
-  currentSource = document.getElementById('dataset-select').value;
-  loadData();
-}
-
-function loadData() {
-  var file = currentSource === 'experiment' ? './data/experiment_history.json' : './data/test_mode_history.json';
-  fetch(file, { cache: 'no-store' })
-    .then(function(r) { if (!r.ok) throw new Error('Not found (' + r.status + ')'); return r.json(); })
-    .then(function(data) { currentData = Array.isArray(data) ? data : []; renderAll(); })
-    .catch(function(err) {
-      currentData = [];
-      document.getElementById('table-body').innerHTML = '<tr><td colspan="10" class="no-data">Could not load ' + esc(file) + ': ' + esc(err.message) + '</td></tr>';
-      document.getElementById('ticker').innerHTML = '';
-    });
-}
-
-function applyFilters() {
-  var from = document.getElementById('date-from').value;
-  var to = document.getElementById('date-to').value;
-  var resultFilter = document.getElementById('result-filter').value;
-
-  return currentData.filter(function(r) {
-    var d = getDateField(r);
-    if (from && d < from) return false;
-    if (to && d > to) return false;
-    if (resultFilter !== 'all' && r.result !== resultFilter) return false;
-    return true;
-  });
-}
-
-function renderTicker(filtered) {
-  var total = filtered.length;
-  var pending = filtered.filter(function(r) { return r.result === 'PENDING'; }).length;
-  var decided = filtered.filter(function(r) { return r.result === 'WIN' || r.result === 'LOSS'; });
-  var wins = decided.filter(function(r) { return r.result === 'WIN'; }).length;
-  var winRate = decided.length ? Math.round(wins / decided.length * 100) : null;
-
-  var items = [
-    ['Total', total], ['Pending', pending], ['Settled', decided.length],
-    ['Win Rate', winRate != null ? winRate + '%' : '—'],
-  ];
-
-  if (currentSource === 'experiment') {
-    var aPub = filtered.filter(function(r) { return r.track_a && r.track_a.decision === 'PUBLISH'; });
-    var bPub = filtered.filter(function(r) { return r.track_b && r.track_b.decision === 'PUBLISH'; });
-    items.push(['Track A Publish', aPub.length], ['Track B Publish', bPub.length]);
-  }
-
-  document.getElementById('ticker').innerHTML = items.map(function(it) {
-    return '<div class="ticker-item"><span class="ticker-value">' + esc(it[1]) + '</span><span class="ticker-label">' + esc(it[0]) + '</span></div>';
-  }).join('');
-}
-
-function pillClass(result) {
-  if (result === 'WIN') return 'pill-win';
-  if (result === 'LOSS') return 'pill-loss';
-  if (result === 'VOID') return 'pill-void';
-  return 'pill-pending';
-}
-
-function decisionPill(decision) {
-  if (!decision) return '<span class="pill pill-pending">—</span>';
-  var cls = decision.decision === 'PUBLISH' ? 'pill-publish' : 'pill-reject';
-  return '<span class="pill ' + cls + '">' + esc(decision.decision) + '</span>';
-}
-
-function renderTable(filtered) {
-  var head = document.getElementById('table-head');
-  var body = document.getElementById('table-body');
-
-  if (currentSource === 'experiment') {
-    head.innerHTML = '<tr><th>Date</th><th>Match</th><th>Market</th><th>Side</th><th>Confidence</th>' +
-      '<th>Track A</th><th>Track B</th><th>Claude Verdict</th><th>Published</th><th>Result</th></tr>';
-
-    if (!filtered.length) {
-      body.innerHTML = '<tr><td colspan="10" class="no-data">No records match these filters.</td></tr>';
-      return;
-    }
-    body.innerHTML = filtered.map(function(r) {
-      return '<tr>' +
-        '<td>' + esc(r.date) + '</td>' +
-        '<td>' + esc(r.home_team) + ' vs ' + esc(r.away_team) + '</td>' +
-        '<td>' + esc(r.market_name) + '</td>' +
-        '<td>' + esc(r.selection) + '</td>' +
-        '<td>' + esc(r.engine_confidence) + '%</td>' +
-        '<td>' + decisionPill(r.track_a) + '</td>' +
-        '<td>' + decisionPill(r.track_b) + '</td>' +
-        '<td>' + esc(r.track_b ? r.track_b.claude_verdict : '—') + '</td>' +
-        '<td>' + (r.actually_published_production ? '✓' : '') + '</td>' +
-        '<td><span class="pill ' + pillClass(r.result) + '">' + esc(r.result) + '</span></td>' +
-        '</tr>';
-    }).join('');
-  } else {
-    head.innerHTML = '<tr><th>Date</th><th>Match</th><th>Competition</th><th>Market</th><th>Selection</th>' +
-      '<th>Confidence</th><th>Result</th></tr>';
-
-    if (!filtered.length) {
-      body.innerHTML = '<tr><td colspan="7" class="no-data">No records match these filters.</td></tr>';
-      return;
-    }
-    body.innerHTML = filtered.map(function(r) {
-      return '<tr>' +
-        '<td>' + esc(r.fixture_date) + '</td>' +
-        '<td>' + esc(r.home_team) + ' vs ' + esc(r.away_team) + '</td>' +
-        '<td>' + esc(r.competition) + '</td>' +
-        '<td>' + esc(r.market_name) + '</td>' +
-        '<td>' + esc(r.selection) + '</td>' +
-        '<td>' + esc(r.confidence) + '%</td>' +
-        '<td><span class="pill ' + pillClass(r.result) + '">' + esc(r.result) + '</span></td>' +
-        '</tr>';
-    }).join('');
-  }
-}
-
-function renderAll() {
-  var filtered = applyFilters();
-  filtered.sort(function(a, b) { return getDateField(b).localeCompare(getDateField(a)); });
-  renderTicker(filtered);
-  renderTable(filtered);
-}
-
-window.onload = function() {
-  setQuickRange('today');
-  loadData();
-};
+var currentData=[];var currentSource='experiment';
+function toggleTheme(){var isLight=document.documentElement.getAttribute('data-theme')==='light';if(isLight){document.documentElement.removeAttribute('data-theme');localStorage.setItem('slipscan-theme','dark')}else{document.documentElement.setAttribute('data-theme','light');localStorage.setItem('slipscan-theme','light')}}
+function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML}
+function pct(n,d,decimals){return d?((n/d)*100).toFixed(decimals==null?1:decimals)+'%':'—'}
+function avg(values){var valid=values.filter(function(v){return Number.isFinite(Number(v))}).map(Number);return valid.length?valid.reduce(function(a,b){return a+b},0)/valid.length:null}
+function lagosToday(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Lagos',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
+function addDays(dateStr,n){var d=new Date(dateStr+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)}
+function setQuickRange(range){document.querySelectorAll('.quick-btn').forEach(function(b){b.classList.toggle('active',b.dataset.range===range)});var today=lagosToday(),from='',to='';if(range==='today'){from=today;to=today}else if(range==='yesterday'){from=addDays(today,-1);to=addDays(today,-1)}else if(range==='7d'){from=addDays(today,-7);to=today}document.getElementById('date-from').value=from;document.getElementById('date-to').value=to;renderAll()}
+function onCustomDateChange(){document.querySelectorAll('.quick-btn').forEach(function(b){b.classList.remove('active')});renderAll()}
+function getDateField(record){return record.date||record.fixture_date||''}
+function onDatasetChange(){currentSource=document.getElementById('dataset-select').value;loadData()}
+function loadData(){var file=currentSource==='experiment'?'./data/experiment_history.json':'./data/test_mode_history.json';fetch(file,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('Not found ('+r.status+')');return r.json()}).then(function(data){currentData=Array.isArray(data)?data:[];renderAll()}).catch(function(err){currentData=[];document.getElementById('table-body').innerHTML='<tr><td colspan="10" class="no-data">Could not load '+esc(file)+': '+esc(err.message)+'</td></tr>';document.getElementById('ticker').innerHTML='';document.getElementById('research-summary').innerHTML='';document.getElementById('analysis-panels').innerHTML=''})}
+function applyFilters(){var from=document.getElementById('date-from').value,to=document.getElementById('date-to').value,resultFilter=document.getElementById('result-filter').value;return currentData.filter(function(r){var d=getDateField(r);if(from&&d<from)return false;if(to&&d>to)return false;if(resultFilter!=='all'&&r.result!==resultFilter)return false;return true})}
+function matchKey(r){return [getDateField(r),r.match_id||'',r.home_team||'',r.away_team||''].join('|')}
+function sampleLabel(n){if(n<10)return'very small';if(n<30)return'preliminary';if(n<100)return'developing';return'established'}
+function outcomeStats(records){var wins=records.filter(function(r){return r.result==='WIN'}).length,losses=records.filter(function(r){return r.result==='LOSS'}).length,voids=records.filter(function(r){return r.result==='VOID'}).length,pending=records.filter(function(r){return r.result==='PENDING'}).length;return{wins:wins,losses:losses,voids:voids,pending:pending,decided:wins+losses,settled:wins+losses+voids,rate:wins+losses?wins/(wins+losses)*100:null}}
+function renderTicker(filtered){var stats=outcomeStats(filtered),items=[['Total',filtered.length],['Pending',stats.pending],['Settled',stats.settled],['Win Rate',stats.rate==null?'—':Math.round(stats.rate)+'%']];if(currentSource==='experiment'){var aPub=filtered.filter(function(r){return r.track_a&&r.track_a.decision==='PUBLISH'}).length;var evaluated=filtered.filter(function(r){return r.track_b!=null}).length;var bPub=filtered.filter(function(r){return r.track_b&&r.track_b.decision==='PUBLISH'}).length;items.push(['Track A Publish',aPub]);items.push(['Track B',evaluated?bPub:'NOT RUN']);items.push(['Claude Coverage',evaluated+'/'+filtered.length+' · '+pct(evaluated,filtered.length,0)])}document.getElementById('ticker').innerHTML=items.map(function(it){return'<div class="ticker-item"><span class="ticker-value">'+esc(it[1])+'</span><span class="ticker-label">'+esc(it[0])+'</span></div>'}).join('')}
+function renderResearchSummary(filtered){var matches=new Set(filtered.map(matchKey)).size,competitions=new Set(filtered.map(function(r){return r.competition}).filter(Boolean)).size,days=new Set(filtered.map(getDateField).filter(Boolean)).size,pending=filtered.filter(function(r){return r.result==='PENDING'}).length,decided=filtered.filter(function(r){return r.result==='WIN'||r.result==='LOSS'});var decidedMatches=new Set(decided.map(matchKey)).size;var cards=[['Unique matches',matches],['Competitions',competitions],['Days covered',days],['Avg logged / match',matches?(filtered.length/matches).toFixed(2):'—'],['Avg decided / match',decidedMatches?(decided.length/decidedMatches).toFixed(2):'—'],['Pending share',pct(pending,filtered.length,1)]];document.getElementById('research-summary').innerHTML=cards.map(function(c){return'<div class="research-card"><div class="value">'+esc(c[1])+'</div><div class="label">'+esc(c[0])+'</div></div>'}).join('')}
+function groupBy(records,keyFn){var map={};records.forEach(function(r){var k=keyFn(r)||'Unknown';(map[k]||(map[k]=[])).push(r)});return map}
+function metricRows(grouped,confidenceField,includeMatches){return Object.keys(grouped).map(function(name){var recs=grouped[name],s=outcomeStats(recs),mean=avg(recs.map(function(r){return r[confidenceField]}));return{name:name,recs:recs,stats:s,mean:mean,matches:new Set(recs.map(matchKey)).size}}).sort(function(a,b){return b.stats.decided-a.stats.decided||b.recs.length-a.recs.length}).map(function(x){var bar=x.stats.rate==null?0:x.stats.rate;return'<tr><td>'+esc(x.name)+'</td>'+(includeMatches?'<td>'+x.matches+'</td>':'')+'<td>'+x.recs.length+'</td><td>'+x.stats.settled+'</td><td>'+x.stats.wins+'</td><td>'+x.stats.losses+'</td><td>'+x.stats.voids+'</td><td>'+x.stats.pending+'</td><td>'+(x.mean==null?'—':x.mean.toFixed(1)+'%')+'</td><td>'+(x.stats.rate==null?'—':x.stats.rate.toFixed(1)+'%')+'</td><td><div class="bar-track"><div class="bar-fill" style="width:'+bar+'%"></div></div></td><td><span class="sample">'+sampleLabel(x.stats.decided)+'</span></td></tr>'}).join('')}
+function confidenceBandRows(filtered,field){var bands=[['60–69%',60,70],['70–79%',70,80],['80–89%',80,90],['90–100%',90,101]];return bands.map(function(b){var recs=filtered.filter(function(r){var v=Number(r[field]);return Number.isFinite(v)&&v>=b[1]&&v<b[2]}),s=outcomeStats(recs),mean=avg(recs.map(function(r){return r[field]})),gap=s.rate==null||mean==null?null:s.rate-mean;return'<tr><td>'+b[0]+'</td><td>'+recs.length+'</td><td>'+s.settled+'</td><td>'+s.wins+'</td><td>'+s.losses+'</td><td>'+s.pending+'</td><td>'+(mean==null?'—':mean.toFixed(1)+'%')+'</td><td>'+(s.rate==null?'—':s.rate.toFixed(1)+'%')+'</td><td>'+(gap==null?'—':(gap>=0?'+':'')+gap.toFixed(1)+'pp')+'</td><td><span class="sample">'+sampleLabel(s.decided)+'</span></td></tr>'}).join('')}
+function claudePanel(filtered){var evaluated=filtered.filter(function(r){return r.track_b!=null}),counts={confirm:0,caution:0,reject:0,unavailable:0,other:0};evaluated.forEach(function(r){var v=String((r.track_b&&r.track_b.claude_verdict)||'other').toLowerCase();if(counts[v]!=null)counts[v]++;else counts.other++});var paired=filtered.filter(function(r){return(r.result==='WIN'||r.result==='LOSS')&&r.track_a&&r.track_b&&String(r.track_b.claude_verdict||'').toLowerCase()!=='unavailable'});return'<details class="analysis-section"><summary>Claude analysis</summary><div class="analysis-body"><div class="analysis-note">Track B comparisons use only settled W/L candidates where both tracks were evaluated successfully.</div><div class="mini-table-wrap"><table class="mini-table"><thead><tr><th>Status</th><th>Count</th></tr></thead><tbody><tr><td>Not attempted</td><td>'+Math.max(0,filtered.length-evaluated.length)+'</td></tr><tr><td>Confirm</td><td>'+counts.confirm+'</td></tr><tr><td>Caution</td><td>'+counts.caution+'</td></tr><tr><td>Reject</td><td>'+counts.reject+'</td></tr><tr><td>Unavailable</td><td>'+counts.unavailable+'</td></tr><tr><td>Fair paired settled sample</td><td>'+paired.length+'</td></tr></tbody></table></div></div></details>'}
+function researchNotes(filtered){var stats=outcomeStats(filtered),decided=filtered.filter(function(r){return r.result==='WIN'||r.result==='LOSS'}),matches=new Set(decided.map(matchKey)).size,notes=[];if(currentSource==='experiment'&&!filtered.some(function(r){return r.track_b!=null}))notes.push('Track B has not been run for the selected records; no Claude-impact conclusion is supported.');if(matches)notes.push('Candidate-level results are correlated: '+(decided.length/matches).toFixed(2)+' decided candidates per unique decided match.');if(decided.length<100)notes.push('The decided candidate sample is below 100; treat market, competition and calibration rates as preliminary.');if(filtered.length&&stats.pending/filtered.length>=0.4)notes.push(pct(stats.pending,filtered.length,1)+' of selected records are pending, so settled-only views remain incomplete.');notes.push('Candidate win rate is not the same as independent-match accuracy, ROI or expected value.');return'<details class="analysis-section"><summary>Research notes</summary><div class="analysis-body"><div class="warning-list">'+notes.map(function(n){return'<div>• '+esc(n)+'</div>'}).join('')+'</div></div></details>'}
+function renderAnalysisPanels(filtered){if(!filtered.length){document.getElementById('analysis-panels').innerHTML='';return}var confField=currentSource==='experiment'?'engine_confidence':'confidence';var byMarket=groupBy(filtered,function(r){return r.market_name});var byComp=groupBy(filtered,function(r){return r.competition||'Unknown'});var html='<details class="analysis-section"><summary>Market performance</summary><div class="analysis-body"><div class="analysis-note">Candidate-level outcomes; sample label is based on decided W/L count.</div><div class="mini-table-wrap"><table class="mini-table"><thead><tr><th>Market</th><th>Logged</th><th>Settled</th><th>W</th><th>L</th><th>V</th><th>Pending</th><th>Avg conf</th><th>Win rate</th><th>Visual</th><th>Sample</th></tr></thead><tbody>'+metricRows(byMarket,confField,false)+'</tbody></table></div></div></details>';
+html+='<details class="analysis-section"><summary>Competition performance</summary><div class="analysis-body"><div class="analysis-note">Unique matches are shown beside candidate counts to expose concentration.</div><div class="mini-table-wrap"><table class="mini-table"><thead><tr><th>Competition</th><th>Matches</th><th>Logged</th><th>Settled</th><th>W</th><th>L</th><th>V</th><th>Pending</th><th>Avg conf</th><th>Win rate</th><th>Visual</th><th>Sample</th></tr></thead><tbody>'+metricRows(byComp,confField,true)+'</tbody></table></div></div></details>';
+html+='<details class="analysis-section"><summary>Confidence calibration</summary><div class="analysis-body"><div class="analysis-note">Gap = actual win rate minus mean stated confidence. Correlated candidates are not independent observations.</div><div class="mini-table-wrap"><table class="mini-table"><thead><tr><th>Band</th><th>Logged</th><th>Settled</th><th>W</th><th>L</th><th>Pending</th><th>Mean conf</th><th>Actual</th><th>Gap</th><th>Sample</th></tr></thead><tbody>'+confidenceBandRows(filtered,confField)+'</tbody></table></div></div></details>';
+if(currentSource==='experiment')html+=claudePanel(filtered);html+=researchNotes(filtered);document.getElementById('analysis-panels').innerHTML=html}
+function pillClass(result){if(result==='WIN')return'pill-win';if(result==='LOSS')return'pill-loss';if(result==='VOID')return'pill-void';return'pill-pending'}
+function decisionPill(decision){if(!decision)return'<span class="pill pill-notrun">NOT RUN</span>';var cls=decision.decision==='PUBLISH'?'pill-publish':'pill-reject';return'<span class="pill '+cls+'">'+esc(decision.decision)+'</span>'}
+function verdictPill(trackB){if(!trackB)return'<span class="pill pill-notrun">NOT RUN</span>';var verdict=String(trackB.claude_verdict||'—').toUpperCase(),cls='pill-notrun';if(verdict==='CONFIRM')cls='pill-confirm';else if(verdict==='CAUTION')cls='pill-caution';else if(verdict==='REJECT')cls='pill-reject';else if(verdict==='UNAVAILABLE')cls='pill-unavailable';return'<span class="pill '+cls+'">'+esc(verdict)+'</span>'}
+function confidenceHtml(value){var n=Number(value);if(!Number.isFinite(n))return'—';var cls=n>=90?'conf-90':n>=80?'conf-80':n>=70?'conf-70':'conf-60';return'<span class="confidence '+cls+'">'+n.toFixed(2)+'%</span>'}
+function publishedHtml(r){if(r.actually_published_production)return'<span class="published-label">Production</span>';if(r.would_be_top5_engine_only)return'<span class="published-label">Engine Top 5</span>';return'<span class="published-label" style="color:var(--muted)">—</span>'}
+function matchHtml(r){var competition=r.competition||'';return'<div class="match-main">'+esc(r.home_team)+' vs '+esc(r.away_team)+'</div>'+(competition?'<div class="match-sub">'+esc(competition)+'</div>':'')}
+function renderTable(filtered){var head=document.getElementById('table-head'),body=document.getElementById('table-body');if(currentSource==='experiment'){head.innerHTML='<tr><th>Date</th><th>Match</th><th>Market</th><th>Side</th><th>Confidence</th><th>Track A</th><th>Track B</th><th>Claude Verdict</th><th>Published</th><th>Result</th></tr>';if(!filtered.length){body.innerHTML='<tr><td colspan="10" class="no-data">No records match these filters.</td></tr>';return}body.innerHTML=filtered.map(function(r){return'<tr><td>'+esc(r.date)+'</td><td>'+matchHtml(r)+'</td><td>'+esc(r.market_name)+'</td><td>'+esc(r.selection)+'</td><td>'+confidenceHtml(r.engine_confidence)+'</td><td>'+decisionPill(r.track_a)+'</td><td>'+decisionPill(r.track_b)+'</td><td>'+verdictPill(r.track_b)+'</td><td>'+publishedHtml(r)+'</td><td><span class="pill '+pillClass(r.result)+'">'+esc(r.result)+'</span></td></tr>'}).join('')}else{head.innerHTML='<tr><th>Date</th><th>Match</th><th>Competition</th><th>Market</th><th>Selection</th><th>Confidence</th><th>Result</th></tr>';if(!filtered.length){body.innerHTML='<tr><td colspan="7" class="no-data">No records match these filters.</td></tr>';return}body.innerHTML=filtered.map(function(r){return'<tr><td>'+esc(r.fixture_date)+'</td><td>'+matchHtml(r)+'</td><td>'+esc(r.competition)+'</td><td>'+esc(r.market_name)+'</td><td>'+esc(r.selection)+'</td><td>'+confidenceHtml(r.confidence)+'</td><td><span class="pill '+pillClass(r.result)+'">'+esc(r.result)+'</span></td></tr>'}).join('')}}
+function renderAll(){var filtered=applyFilters();filtered.sort(function(a,b){return getDateField(b).localeCompare(getDateField(a))});renderTicker(filtered);renderResearchSummary(filtered);renderAnalysisPanels(filtered);renderTable(filtered)}
+window.onload=function(){setQuickRange('today');loadData()};
 </script>
-
 </body>
 </html>
