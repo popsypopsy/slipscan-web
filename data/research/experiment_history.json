@@ -38756,8 +38756,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:39.109364+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -38802,8 +38802,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:39.435493+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -38848,8 +38848,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:39.620646+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -38894,8 +38894,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": true,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:39.833066+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -38940,8 +38940,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:40.056891+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -38986,8 +38986,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:40.351095+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39032,8 +39032,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": true,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:40.637330+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39078,8 +39078,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:41.374135+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39124,8 +39124,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:41.677746+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39170,8 +39170,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": true,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:41.826386+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39216,8 +39216,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:41.973953+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39262,8 +39262,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:42.125557+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39308,8 +39308,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:42.282164+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39354,8 +39354,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:42.435755+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39400,8 +39400,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:34.205903+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39446,8 +39446,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:34.388214+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39492,8 +39492,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:34.533771+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39538,8 +39538,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:34.709972+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39584,8 +39584,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:34.885105+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39630,8 +39630,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:37.141970+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39676,8 +39676,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:37.300490+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39722,8 +39722,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:37.446196+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39768,8 +39768,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:37.591836+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39814,8 +39814,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:37.785315+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39860,8 +39860,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": true,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:38.084110+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39906,8 +39906,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:35.637475+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39952,8 +39952,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:35.843698+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -39998,8 +39998,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:36.088006+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -40044,8 +40044,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "WIN",
+    "settled_at": "2026-07-28T04:03:36.242652+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -40090,8 +40090,8 @@
     "actually_published_production": false,
     "would_be_top5_engine_only": false,
     "odds": null,
-    "result": "PENDING",
-    "settled_at": null,
+    "result": "LOSS",
+    "settled_at": "2026-07-28T04:03:36.390555+00:00",
     "engine_version": "engine-v1",
     "confidence_version": "confidence-v1",
     "claude_validator_version": "validator-v1",
@@ -40476,5 +40476,2534 @@
       "away_possession": 53.67
     },
     "logged_at": "2026-07-27T09:02:17.391639+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394540:dc_x2:X2",
+    "match_id": "394540",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Ponte Preta",
+    "away_team": "Athletic Club Sjdr MG",
+    "market_id": "dc_x2",
+    "market_name": "Double Chance X2",
+    "selection": "X2",
+    "line": null,
+    "engine_raw_probability": 0.7711,
+    "engine_confidence": 77.11,
+    "track_a": {
+      "final_confidence": 77.11,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.0,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 0.896,
+      "exp_goals_away": 1.475,
+      "total_exp_goals": 2.372,
+      "goal_diff_edge": -0.579,
+      "exp_corners": 9.64,
+      "exp_cards": 5.42,
+      "home_cs_rate": 0.105,
+      "away_cs_rate": 0.263,
+      "home_possession": 42.58,
+      "away_possession": 44.05
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "sum_of_poisson_match_outcome_probabilities",
+        "inputs": {
+          "exp_goals_home": 0.896,
+          "exp_goals_away": 1.475
+        }
+      },
+      "decision": {
+        "raw_probability": 0.7711,
+        "raw_confidence": 77.11,
+        "rank_by_raw_confidence": 2,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 5,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 0.896 home goals and 1.475 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.7711 (77.11%).",
+        "It ranked 2 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:52.662757+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394540:dc_12:12",
+    "match_id": "394540",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Ponte Preta",
+    "away_team": "Athletic Club Sjdr MG",
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "selection": "12",
+    "line": null,
+    "engine_raw_probability": 0.7359,
+    "engine_confidence": 73.59,
+    "track_a": {
+      "final_confidence": 73.59,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 0.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 0.896,
+      "exp_goals_away": 1.475,
+      "total_exp_goals": 2.372,
+      "goal_diff_edge": -0.579,
+      "exp_corners": 9.64,
+      "exp_cards": 5.42,
+      "home_cs_rate": 0.105,
+      "away_cs_rate": 0.263,
+      "home_possession": 42.58,
+      "away_possession": 44.05
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "sum_of_poisson_match_outcome_probabilities",
+        "inputs": {
+          "exp_goals_home": 0.896,
+          "exp_goals_away": 1.475
+        }
+      },
+      "decision": {
+        "raw_probability": 0.7359,
+        "raw_confidence": 73.59,
+        "rank_by_raw_confidence": 3,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 5,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 0.896 home goals and 1.475 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.7359 (73.59%).",
+        "It ranked 3 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:52.873875+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394540:dnb_away:Away",
+    "match_id": "394540",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Ponte Preta",
+    "away_team": "Athletic Club Sjdr MG",
+    "market_id": "dnb_away",
+    "market_name": "Draw No Bet - Away",
+    "selection": "Away",
+    "line": null,
+    "engine_raw_probability": 0.689,
+    "engine_confidence": 68.9,
+    "track_a": {
+      "final_confidence": 68.9,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 0.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 0.896,
+      "exp_goals_away": 1.475,
+      "total_exp_goals": 2.372,
+      "goal_diff_edge": -0.579,
+      "exp_corners": 9.64,
+      "exp_cards": 5.42,
+      "home_cs_rate": 0.105,
+      "away_cs_rate": 0.263,
+      "home_possession": 42.58,
+      "away_possession": 44.05
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_home_away_probabilities_renormalized_without_draw",
+        "inputs": {
+          "exp_goals_home": 0.896,
+          "exp_goals_away": 1.475
+        }
+      },
+      "decision": {
+        "raw_probability": 0.689,
+        "raw_confidence": 68.9,
+        "rank_by_raw_confidence": 4,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 5,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 0.896 home goals and 1.475 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.6890 (68.90%).",
+        "It ranked 4 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:53.028659+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394540:ou_1.5:Over",
+    "match_id": "394540",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Ponte Preta",
+    "away_team": "Athletic Club Sjdr MG",
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "selection": "Over",
+    "line": "1.5",
+    "engine_raw_probability": 0.6854,
+    "engine_confidence": 68.54,
+    "track_a": {
+      "final_confidence": 68.54,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 0.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 0.896,
+      "exp_goals_away": 1.475,
+      "total_exp_goals": 2.372,
+      "goal_diff_edge": -0.579,
+      "exp_corners": 9.64,
+      "exp_cards": 5.42,
+      "home_cs_rate": 0.105,
+      "away_cs_rate": 0.263,
+      "home_possession": 42.58,
+      "away_possession": 44.05
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_goals_distribution",
+        "inputs": {
+          "total_exp_goals": 2.372
+        },
+        "line": 1.5,
+        "selection": "Over"
+      },
+      "decision": {
+        "raw_probability": 0.6854,
+        "raw_confidence": 68.54,
+        "rank_by_raw_confidence": 5,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 5,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 2.372 total goals.",
+        "The evaluated selection was Over 1.5.",
+        "The rule engine assigned this selection a raw probability of 0.6854 (68.54%).",
+        "It ranked 5 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:53.172702+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394540:ou_3.5:Under",
+    "match_id": "394540",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Ponte Preta",
+    "away_team": "Athletic Club Sjdr MG",
+    "market_id": "ou_3.5",
+    "market_name": "Over/Under 3.5 Goals",
+    "selection": "Under",
+    "line": "3.5",
+    "engine_raw_probability": 0.7846,
+    "engine_confidence": 78.46,
+    "track_a": {
+      "final_confidence": 78.46,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.0,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": true,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": true,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 0.896,
+      "exp_goals_away": 1.475,
+      "total_exp_goals": 2.372,
+      "goal_diff_edge": -0.579,
+      "exp_corners": 9.64,
+      "exp_cards": 5.42,
+      "home_cs_rate": 0.105,
+      "away_cs_rate": 0.263,
+      "home_possession": 42.58,
+      "away_possession": 44.05
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_goals_distribution",
+        "inputs": {
+          "total_exp_goals": 2.372
+        },
+        "line": 3.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.7846,
+        "raw_confidence": 78.46,
+        "rank_by_raw_confidence": 1,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 5,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": true,
+        "rank_after_existing_market_filter": 1,
+        "production_candidate": true
+      },
+      "statements": [
+        "The feature model estimated 2.372 total goals.",
+        "The evaluated selection was Under 3.5.",
+        "The rule engine assigned this selection a raw probability of 0.7846 (78.46%).",
+        "It ranked 1 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was the first candidate returned by the existing market filter for this match."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:53.331273+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394538:dc_1x:1X",
+    "match_id": "394538",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Juventude RS",
+    "away_team": "Avai",
+    "market_id": "dc_1x",
+    "market_name": "Double Chance 1X",
+    "selection": "1X",
+    "line": null,
+    "engine_raw_probability": 0.7608,
+    "engine_confidence": 76.08,
+    "track_a": {
+      "final_confidence": 76.08,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.0,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 1.364,
+      "exp_goals_away": 0.87,
+      "total_exp_goals": 2.234,
+      "goal_diff_edge": 0.494,
+      "exp_corners": 8.1,
+      "exp_cards": 4.74,
+      "home_cs_rate": 0.684,
+      "away_cs_rate": 0.316,
+      "home_possession": 50.05,
+      "away_possession": 48.58
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "sum_of_poisson_match_outcome_probabilities",
+        "inputs": {
+          "exp_goals_home": 1.364,
+          "exp_goals_away": 0.87
+        }
+      },
+      "decision": {
+        "raw_probability": 0.7608,
+        "raw_confidence": 76.08,
+        "rank_by_raw_confidence": 3,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 7,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 1.364 home goals and 0.870 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.7608 (76.08%).",
+        "It ranked 3 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:53.494040+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394538:dc_12:12",
+    "match_id": "394538",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Juventude RS",
+    "away_team": "Avai",
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "selection": "12",
+    "line": null,
+    "engine_raw_probability": 0.7227,
+    "engine_confidence": 72.27,
+    "track_a": {
+      "final_confidence": 72.27,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 0.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 1.364,
+      "exp_goals_away": 0.87,
+      "total_exp_goals": 2.234,
+      "goal_diff_edge": 0.494,
+      "exp_corners": 8.1,
+      "exp_cards": 4.74,
+      "home_cs_rate": 0.684,
+      "away_cs_rate": 0.316,
+      "home_possession": 50.05,
+      "away_possession": 48.58
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "sum_of_poisson_match_outcome_probabilities",
+        "inputs": {
+          "exp_goals_home": 1.364,
+          "exp_goals_away": 0.87
+        }
+      },
+      "decision": {
+        "raw_probability": 0.7227,
+        "raw_confidence": 72.27,
+        "rank_by_raw_confidence": 4,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 7,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 1.364 home goals and 0.870 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.7227 (72.27%).",
+        "It ranked 4 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:53.681539+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394538:dnb_home:Home",
+    "match_id": "394538",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Juventude RS",
+    "away_team": "Avai",
+    "market_id": "dnb_home",
+    "market_name": "Draw No Bet - Home",
+    "selection": "Home",
+    "line": null,
+    "engine_raw_probability": 0.669,
+    "engine_confidence": 66.9,
+    "track_a": {
+      "final_confidence": 66.9,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 0.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 1.364,
+      "exp_goals_away": 0.87,
+      "total_exp_goals": 2.234,
+      "goal_diff_edge": 0.494,
+      "exp_corners": 8.1,
+      "exp_cards": 4.74,
+      "home_cs_rate": 0.684,
+      "away_cs_rate": 0.316,
+      "home_possession": 50.05,
+      "away_possession": 48.58
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_home_away_probabilities_renormalized_without_draw",
+        "inputs": {
+          "exp_goals_home": 1.364,
+          "exp_goals_away": 0.87
+        }
+      },
+      "decision": {
+        "raw_probability": 0.669,
+        "raw_confidence": 66.9,
+        "rank_by_raw_confidence": 6,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 7,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 1.364 home goals and 0.870 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.6690 (66.90%).",
+        "It ranked 6 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:53.861059+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394538:ou_1.5:Over",
+    "match_id": "394538",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Juventude RS",
+    "away_team": "Avai",
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "selection": "Over",
+    "line": "1.5",
+    "engine_raw_probability": 0.6536,
+    "engine_confidence": 65.36,
+    "track_a": {
+      "final_confidence": 65.36,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 0.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 1.364,
+      "exp_goals_away": 0.87,
+      "total_exp_goals": 2.234,
+      "goal_diff_edge": 0.494,
+      "exp_corners": 8.1,
+      "exp_cards": 4.74,
+      "home_cs_rate": 0.684,
+      "away_cs_rate": 0.316,
+      "home_possession": 50.05,
+      "away_possession": 48.58
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_goals_distribution",
+        "inputs": {
+          "total_exp_goals": 2.234
+        },
+        "line": 1.5,
+        "selection": "Over"
+      },
+      "decision": {
+        "raw_probability": 0.6536,
+        "raw_confidence": 65.36,
+        "rank_by_raw_confidence": 7,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 7,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 2.234 total goals.",
+        "The evaluated selection was Over 1.5.",
+        "The rule engine assigned this selection a raw probability of 0.6536 (65.36%).",
+        "It ranked 7 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:54.028336+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394538:ou_3.5:Under",
+    "match_id": "394538",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Juventude RS",
+    "away_team": "Avai",
+    "market_id": "ou_3.5",
+    "market_name": "Over/Under 3.5 Goals",
+    "selection": "Under",
+    "line": "3.5",
+    "engine_raw_probability": 0.8126,
+    "engine_confidence": 81.26,
+    "track_a": {
+      "final_confidence": 81.26,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.0,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": true,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": true,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 1.364,
+      "exp_goals_away": 0.87,
+      "total_exp_goals": 2.234,
+      "goal_diff_edge": 0.494,
+      "exp_corners": 8.1,
+      "exp_cards": 4.74,
+      "home_cs_rate": 0.684,
+      "away_cs_rate": 0.316,
+      "home_possession": 50.05,
+      "away_possession": 48.58
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_goals_distribution",
+        "inputs": {
+          "total_exp_goals": 2.234
+        },
+        "line": 3.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.8126,
+        "raw_confidence": 81.26,
+        "rank_by_raw_confidence": 1,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 7,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": true,
+        "rank_after_existing_market_filter": 1,
+        "production_candidate": true
+      },
+      "statements": [
+        "The feature model estimated 2.234 total goals.",
+        "The evaluated selection was Under 3.5.",
+        "The rule engine assigned this selection a raw probability of 0.8126 (81.26%).",
+        "It ranked 1 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was the first candidate returned by the existing market filter for this match."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:54.202870+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394538:corners_9.5:Under",
+    "match_id": "394538",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Juventude RS",
+    "away_team": "Avai",
+    "market_id": "corners_9.5",
+    "market_name": "Over/Under 9.5 Corners",
+    "selection": "Under",
+    "line": "9.5",
+    "engine_raw_probability": 0.7041,
+    "engine_confidence": 70.41,
+    "track_a": {
+      "final_confidence": 70.41,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 0.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 1.364,
+      "exp_goals_away": 0.87,
+      "total_exp_goals": 2.234,
+      "goal_diff_edge": 0.494,
+      "exp_corners": 8.1,
+      "exp_cards": 4.74,
+      "home_cs_rate": 0.684,
+      "away_cs_rate": 0.316,
+      "home_possession": 50.05,
+      "away_possession": 48.58
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_corners_distribution",
+        "inputs": {
+          "exp_corners": 8.1
+        },
+        "line": 9.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.7041,
+        "raw_confidence": 70.41,
+        "rank_by_raw_confidence": 5,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 7,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 8.100 total corners.",
+        "The evaluated selection was Under 9.5.",
+        "The rule engine assigned this selection a raw probability of 0.7041 (70.41%).",
+        "It ranked 5 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:54.413946+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:394538:corners_10.5:Under",
+    "match_id": "394538",
+    "date": "2026-07-28",
+    "competition": "Brasileiro Serie B",
+    "home_team": "Juventude RS",
+    "away_team": "Avai",
+    "market_id": "corners_10.5",
+    "market_name": "Over/Under 10.5 Corners",
+    "selection": "Under",
+    "line": "10.5",
+    "engine_raw_probability": 0.8058,
+    "engine_confidence": 80.58,
+    "track_a": {
+      "final_confidence": 80.58,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.0,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 1.364,
+      "exp_goals_away": 0.87,
+      "total_exp_goals": 2.234,
+      "goal_diff_edge": 0.494,
+      "exp_corners": 8.1,
+      "exp_cards": 4.74,
+      "home_cs_rate": 0.684,
+      "away_cs_rate": 0.316,
+      "home_possession": 50.05,
+      "away_possession": 48.58
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_corners_distribution",
+        "inputs": {
+          "exp_corners": 8.1
+        },
+        "line": 10.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.8058,
+        "raw_confidence": 80.58,
+        "rank_by_raw_confidence": 2,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 7,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 8.100 total corners.",
+        "The evaluated selection was Under 10.5.",
+        "The rule engine assigned this selection a raw probability of 0.8058 (80.58%).",
+        "It ranked 2 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:54.568437+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:1x2_home:Home",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "1x2_home",
+    "market_name": "Home Win",
+    "selection": "Home",
+    "line": null,
+    "engine_raw_probability": 0.8441,
+    "engine_confidence": 84.41,
+    "track_a": {
+      "final_confidence": 84.41,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.0,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "independent_poisson_score_grid",
+        "inputs": {
+          "exp_goals_home": 2.514,
+          "exp_goals_away": 0.355
+        }
+      },
+      "decision": {
+        "raw_probability": 0.8441,
+        "raw_confidence": 84.41,
+        "rank_by_raw_confidence": 7,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 2.514 home goals and 0.355 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.8441 (84.41%).",
+        "It ranked 7 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:54.714047+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:dc_1x:1X",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "dc_1x",
+    "market_name": "Double Chance 1X",
+    "selection": "1X",
+    "line": null,
+    "engine_raw_probability": 0.964,
+    "engine_confidence": 96.4,
+    "track_a": {
+      "final_confidence": 96.4,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "sum_of_poisson_match_outcome_probabilities",
+        "inputs": {
+          "exp_goals_home": 2.514,
+          "exp_goals_away": 0.355
+        }
+      },
+      "decision": {
+        "raw_probability": 0.964,
+        "raw_confidence": 96.4,
+        "rank_by_raw_confidence": 2,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 2.514 home goals and 0.355 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.9640 (96.40%).",
+        "It ranked 2 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:54.867449+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:dc_12:12",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "selection": "12",
+    "line": null,
+    "engine_raw_probability": 0.88,
+    "engine_confidence": 88.0,
+    "track_a": {
+      "final_confidence": 88.0,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "sum_of_poisson_match_outcome_probabilities",
+        "inputs": {
+          "exp_goals_home": 2.514,
+          "exp_goals_away": 0.355
+        }
+      },
+      "decision": {
+        "raw_probability": 0.88,
+        "raw_confidence": 88.0,
+        "rank_by_raw_confidence": 5,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 2.514 home goals and 0.355 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.8800 (88.00%).",
+        "It ranked 5 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:55.120545+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:dnb_home:Home",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "dnb_home",
+    "market_name": "Draw No Bet - Home",
+    "selection": "Home",
+    "line": null,
+    "engine_raw_probability": 0.9592,
+    "engine_confidence": 95.92,
+    "track_a": {
+      "final_confidence": 95.92,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_home_away_probabilities_renormalized_without_draw",
+        "inputs": {
+          "exp_goals_home": 2.514,
+          "exp_goals_away": 0.355
+        }
+      },
+      "decision": {
+        "raw_probability": 0.9592,
+        "raw_confidence": 95.92,
+        "rank_by_raw_confidence": 3,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 2.514 home goals and 0.355 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.9592 (95.92%).",
+        "It ranked 3 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:55.266929+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:ou_1.5:Over",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "selection": "Over",
+    "line": "1.5",
+    "engine_raw_probability": 0.7804,
+    "engine_confidence": 78.04,
+    "track_a": {
+      "final_confidence": 78.04,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.0,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_goals_distribution",
+        "inputs": {
+          "total_exp_goals": 2.869
+        },
+        "line": 1.5,
+        "selection": "Over"
+      },
+      "decision": {
+        "raw_probability": 0.7804,
+        "raw_confidence": 78.04,
+        "rank_by_raw_confidence": 8,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 2.869 total goals.",
+        "The evaluated selection was Over 1.5.",
+        "The rule engine assigned this selection a raw probability of 0.7804 (78.04%).",
+        "It ranked 8 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:55.420557+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:ou_3.5:Under",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "ou_3.5",
+    "market_name": "Over/Under 3.5 Goals",
+    "selection": "Under",
+    "line": "3.5",
+    "engine_raw_probability": 0.6766,
+    "engine_confidence": 67.66,
+    "track_a": {
+      "final_confidence": 67.66,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 0.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_goals_distribution",
+        "inputs": {
+          "total_exp_goals": 2.869
+        },
+        "line": 3.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.6766,
+        "raw_confidence": 67.66,
+        "rank_by_raw_confidence": 11,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 2.869 total goals.",
+        "The evaluated selection was Under 3.5.",
+        "The rule engine assigned this selection a raw probability of 0.6766 (67.66%).",
+        "It ranked 11 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:55.588705+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:btts:No",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "btts",
+    "market_name": "BTTS",
+    "selection": "No",
+    "line": null,
+    "engine_raw_probability": 0.7254,
+    "engine_confidence": 72.54,
+    "track_a": {
+      "final_confidence": 72.54,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 0.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "product_of_independent_team_scoring_probabilities",
+        "inputs": {
+          "exp_goals_home": 2.514,
+          "exp_goals_away": 0.355
+        },
+        "selection": "No"
+      },
+      "decision": {
+        "raw_probability": 0.7254,
+        "raw_confidence": 72.54,
+        "rank_by_raw_confidence": 9,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 2.514 home goals and 0.355 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.7254 (72.54%).",
+        "It ranked 9 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:55.749313+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:corners_8.5:Under",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "corners_8.5",
+    "market_name": "Over/Under 8.5 Corners",
+    "selection": "Under",
+    "line": "8.5",
+    "engine_raw_probability": 0.8757,
+    "engine_confidence": 87.57,
+    "track_a": {
+      "final_confidence": 87.57,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_corners_distribution",
+        "inputs": {
+          "exp_corners": 5.71
+        },
+        "line": 8.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.8757,
+        "raw_confidence": 87.57,
+        "rank_by_raw_confidence": 6,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 5.710 total corners.",
+        "The evaluated selection was Under 8.5.",
+        "The rule engine assigned this selection a raw probability of 0.8757 (87.57%).",
+        "It ranked 6 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:55.956659+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:corners_9.5:Under",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "corners_9.5",
+    "market_name": "Over/Under 9.5 Corners",
+    "selection": "Under",
+    "line": "9.5",
+    "engine_raw_probability": 0.9346,
+    "engine_confidence": 93.46,
+    "track_a": {
+      "final_confidence": 93.46,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_corners_distribution",
+        "inputs": {
+          "exp_corners": 5.71
+        },
+        "line": 9.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.9346,
+        "raw_confidence": 93.46,
+        "rank_by_raw_confidence": 4,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 5.710 total corners.",
+        "The evaluated selection was Under 9.5.",
+        "The rule engine assigned this selection a raw probability of 0.9346 (93.46%).",
+        "It ranked 4 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:56.154170+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:corners_10.5:Under",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "corners_10.5",
+    "market_name": "Over/Under 10.5 Corners",
+    "selection": "Under",
+    "line": "10.5",
+    "engine_raw_probability": 0.9682,
+    "engine_confidence": 96.82,
+    "track_a": {
+      "final_confidence": 96.82,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": true,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": true,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_corners_distribution",
+        "inputs": {
+          "exp_corners": 5.71
+        },
+        "line": 10.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.9682,
+        "raw_confidence": 96.82,
+        "rank_by_raw_confidence": 1,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": true,
+        "rank_after_existing_market_filter": 1,
+        "production_candidate": true
+      },
+      "statements": [
+        "The feature model estimated 5.710 total corners.",
+        "The evaluated selection was Under 10.5.",
+        "The rule engine assigned this selection a raw probability of 0.9682 (96.82%).",
+        "It ranked 1 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was the first candidate returned by the existing market filter for this match."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:56.312713+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:451540:cs_home:Yes",
+    "match_id": "451540",
+    "date": "2026-07-28",
+    "competition": "CONMEBOL Sudamericana",
+    "home_team": "Tigre",
+    "away_team": "Nacional",
+    "market_id": "cs_home",
+    "market_name": "Clean Sheet - Home",
+    "selection": "Yes",
+    "line": null,
+    "engine_raw_probability": 0.7012,
+    "engine_confidence": 70.12,
+    "track_a": {
+      "final_confidence": 70.12,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 0.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 2.514,
+      "exp_goals_away": 0.355,
+      "total_exp_goals": 2.869,
+      "goal_diff_edge": 2.159,
+      "exp_corners": 5.71,
+      "exp_cards": 3.57,
+      "home_cs_rate": 0.429,
+      "away_cs_rate": 0.0,
+      "home_possession": 43.0,
+      "away_possession": 40.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_probability_away_team_scores_zero",
+        "inputs": {
+          "exp_goals_away": 0.355
+        },
+        "selection": "Yes"
+      },
+      "decision": {
+        "raw_probability": 0.7012,
+        "raw_confidence": 70.12,
+        "rank_by_raw_confidence": 10,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 11,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 0.355 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.7012 (70.12%).",
+        "It ranked 10 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:56.459184+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:460613:1x2_home:Home",
+    "match_id": "460613",
+    "date": "2026-07-28",
+    "competition": "ASEAN Championship",
+    "home_team": "Malaysia",
+    "away_team": "Laos",
+    "market_id": "1x2_home",
+    "market_name": "Home Win",
+    "selection": "Home",
+    "line": null,
+    "engine_raw_probability": 0.9268,
+    "engine_confidence": 92.68,
+    "track_a": {
+      "final_confidence": 92.68,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 3.85,
+      "exp_goals_away": 0.5,
+      "total_exp_goals": 4.35,
+      "goal_diff_edge": 3.35,
+      "exp_corners": 6.0,
+      "exp_cards": 4.0,
+      "home_cs_rate": 0.0,
+      "away_cs_rate": 0.0,
+      "home_possession": 53.0,
+      "away_possession": 30.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "independent_poisson_score_grid",
+        "inputs": {
+          "exp_goals_home": 3.85,
+          "exp_goals_away": 0.5
+        }
+      },
+      "decision": {
+        "raw_probability": 0.9268,
+        "raw_confidence": 92.68,
+        "rank_by_raw_confidence": 6,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 9,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 3.850 home goals and 0.500 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.9268 (92.68%).",
+        "It ranked 6 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:56.743226+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:460613:dc_1x:1X",
+    "match_id": "460613",
+    "date": "2026-07-28",
+    "competition": "ASEAN Championship",
+    "home_team": "Malaysia",
+    "away_team": "Laos",
+    "market_id": "dc_1x",
+    "market_name": "Double Chance 1X",
+    "selection": "1X",
+    "line": null,
+    "engine_raw_probability": 0.9794,
+    "engine_confidence": 97.94,
+    "track_a": {
+      "final_confidence": 97.94,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 3.85,
+      "exp_goals_away": 0.5,
+      "total_exp_goals": 4.35,
+      "goal_diff_edge": 3.35,
+      "exp_corners": 6.0,
+      "exp_cards": 4.0,
+      "home_cs_rate": 0.0,
+      "away_cs_rate": 0.0,
+      "home_possession": 53.0,
+      "away_possession": 30.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "sum_of_poisson_match_outcome_probabilities",
+        "inputs": {
+          "exp_goals_home": 3.85,
+          "exp_goals_away": 0.5
+        }
+      },
+      "decision": {
+        "raw_probability": 0.9794,
+        "raw_confidence": 97.94,
+        "rank_by_raw_confidence": 2,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 9,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 3.850 home goals and 0.500 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.9794 (97.94%).",
+        "It ranked 2 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:56.905678+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:460613:dc_12:12",
+    "match_id": "460613",
+    "date": "2026-07-28",
+    "competition": "ASEAN Championship",
+    "home_team": "Malaysia",
+    "away_team": "Laos",
+    "market_id": "dc_12",
+    "market_name": "Double Chance 12",
+    "selection": "12",
+    "line": null,
+    "engine_raw_probability": 0.9453,
+    "engine_confidence": 94.53,
+    "track_a": {
+      "final_confidence": 94.53,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 3.85,
+      "exp_goals_away": 0.5,
+      "total_exp_goals": 4.35,
+      "goal_diff_edge": 3.35,
+      "exp_corners": 6.0,
+      "exp_cards": 4.0,
+      "home_cs_rate": 0.0,
+      "away_cs_rate": 0.0,
+      "home_possession": 53.0,
+      "away_possession": 30.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "sum_of_poisson_match_outcome_probabilities",
+        "inputs": {
+          "exp_goals_home": 3.85,
+          "exp_goals_away": 0.5
+        }
+      },
+      "decision": {
+        "raw_probability": 0.9453,
+        "raw_confidence": 94.53,
+        "rank_by_raw_confidence": 4,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 9,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 3.850 home goals and 0.500 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.9453 (94.53%).",
+        "It ranked 4 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:57.056454+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:460613:dnb_home:Home",
+    "match_id": "460613",
+    "date": "2026-07-28",
+    "competition": "ASEAN Championship",
+    "home_team": "Malaysia",
+    "away_team": "Laos",
+    "market_id": "dnb_home",
+    "market_name": "Draw No Bet - Home",
+    "selection": "Home",
+    "line": null,
+    "engine_raw_probability": 0.9805,
+    "engine_confidence": 98.05,
+    "track_a": {
+      "final_confidence": 98.05,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": true,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": true,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 3.85,
+      "exp_goals_away": 0.5,
+      "total_exp_goals": 4.35,
+      "goal_diff_edge": 3.35,
+      "exp_corners": 6.0,
+      "exp_cards": 4.0,
+      "home_cs_rate": 0.0,
+      "away_cs_rate": 0.0,
+      "home_possession": 53.0,
+      "away_possession": 30.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_home_away_probabilities_renormalized_without_draw",
+        "inputs": {
+          "exp_goals_home": 3.85,
+          "exp_goals_away": 0.5
+        }
+      },
+      "decision": {
+        "raw_probability": 0.9805,
+        "raw_confidence": 98.05,
+        "rank_by_raw_confidence": 1,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 9,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": true,
+        "rank_after_existing_market_filter": 1,
+        "production_candidate": true
+      },
+      "statements": [
+        "The feature model estimated 3.850 home goals and 0.500 away goals.",
+        "The rule engine assigned this selection a raw probability of 0.9805 (98.05%).",
+        "It ranked 1 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was the first candidate returned by the existing market filter for this match."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:57.269882+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:460613:ou_1.5:Over",
+    "match_id": "460613",
+    "date": "2026-07-28",
+    "competition": "ASEAN Championship",
+    "home_team": "Malaysia",
+    "away_team": "Laos",
+    "market_id": "ou_1.5",
+    "market_name": "Over/Under 1.5 Goals",
+    "selection": "Over",
+    "line": "1.5",
+    "engine_raw_probability": 0.9309,
+    "engine_confidence": 93.09,
+    "track_a": {
+      "final_confidence": 93.09,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 3.85,
+      "exp_goals_away": 0.5,
+      "total_exp_goals": 4.35,
+      "goal_diff_edge": 3.35,
+      "exp_corners": 6.0,
+      "exp_cards": 4.0,
+      "home_cs_rate": 0.0,
+      "away_cs_rate": 0.0,
+      "home_possession": 53.0,
+      "away_possession": 30.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_goals_distribution",
+        "inputs": {
+          "total_exp_goals": 4.35
+        },
+        "line": 1.5,
+        "selection": "Over"
+      },
+      "decision": {
+        "raw_probability": 0.9309,
+        "raw_confidence": 93.09,
+        "rank_by_raw_confidence": 5,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 9,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 4.350 total goals.",
+        "The evaluated selection was Over 1.5.",
+        "The rule engine assigned this selection a raw probability of 0.9309 (93.09%).",
+        "It ranked 5 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:57.430677+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:460613:ou_2.5:Over",
+    "match_id": "460613",
+    "date": "2026-07-28",
+    "competition": "ASEAN Championship",
+    "home_team": "Malaysia",
+    "away_team": "Laos",
+    "market_id": "ou_2.5",
+    "market_name": "Over/Under 2.5 Goals",
+    "selection": "Over",
+    "line": "2.5",
+    "engine_raw_probability": 0.8088,
+    "engine_confidence": 80.88,
+    "track_a": {
+      "final_confidence": 80.88,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.0,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 3.85,
+      "exp_goals_away": 0.5,
+      "total_exp_goals": 4.35,
+      "goal_diff_edge": 3.35,
+      "exp_corners": 6.0,
+      "exp_cards": 4.0,
+      "home_cs_rate": 0.0,
+      "away_cs_rate": 0.0,
+      "home_possession": 53.0,
+      "away_possession": 30.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_goals_distribution",
+        "inputs": {
+          "total_exp_goals": 4.35
+        },
+        "line": 2.5,
+        "selection": "Over"
+      },
+      "decision": {
+        "raw_probability": 0.8088,
+        "raw_confidence": 80.88,
+        "rank_by_raw_confidence": 9,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 9,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 4.350 total goals.",
+        "The evaluated selection was Over 2.5.",
+        "The rule engine assigned this selection a raw probability of 0.8088 (80.88%).",
+        "It ranked 9 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:57.596130+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:460613:corners_8.5:Under",
+    "match_id": "460613",
+    "date": "2026-07-28",
+    "competition": "ASEAN Championship",
+    "home_team": "Malaysia",
+    "away_team": "Laos",
+    "market_id": "corners_8.5",
+    "market_name": "Over/Under 8.5 Corners",
+    "selection": "Under",
+    "line": "8.5",
+    "engine_raw_probability": 0.8472,
+    "engine_confidence": 84.72,
+    "track_a": {
+      "final_confidence": 84.72,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.0,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 3.85,
+      "exp_goals_away": 0.5,
+      "total_exp_goals": 4.35,
+      "goal_diff_edge": 3.35,
+      "exp_corners": 6.0,
+      "exp_cards": 4.0,
+      "home_cs_rate": 0.0,
+      "away_cs_rate": 0.0,
+      "home_possession": 53.0,
+      "away_possession": 30.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_corners_distribution",
+        "inputs": {
+          "exp_corners": 6.0
+        },
+        "line": 8.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.8472,
+        "raw_confidence": 84.72,
+        "rank_by_raw_confidence": 8,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 9,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 6.000 total corners.",
+        "The evaluated selection was Under 8.5.",
+        "The rule engine assigned this selection a raw probability of 0.8472 (84.72%).",
+        "It ranked 8 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:57.750715+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:460613:corners_9.5:Under",
+    "match_id": "460613",
+    "date": "2026-07-28",
+    "competition": "ASEAN Championship",
+    "home_team": "Malaysia",
+    "away_team": "Laos",
+    "market_id": "corners_9.5",
+    "market_name": "Over/Under 9.5 Corners",
+    "selection": "Under",
+    "line": "9.5",
+    "engine_raw_probability": 0.9161,
+    "engine_confidence": 91.61,
+    "track_a": {
+      "final_confidence": 91.61,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 3.85,
+      "exp_goals_away": 0.5,
+      "total_exp_goals": 4.35,
+      "goal_diff_edge": 3.35,
+      "exp_corners": 6.0,
+      "exp_cards": 4.0,
+      "home_cs_rate": 0.0,
+      "away_cs_rate": 0.0,
+      "home_possession": 53.0,
+      "away_possession": 30.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_corners_distribution",
+        "inputs": {
+          "exp_corners": 6.0
+        },
+        "line": 9.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.9161,
+        "raw_confidence": 91.61,
+        "rank_by_raw_confidence": 7,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 9,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 6.000 total corners.",
+        "The evaluated selection was Under 9.5.",
+        "The rule engine assigned this selection a raw probability of 0.9161 (91.61%).",
+        "It ranked 7 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:57.909077+00:00"
+  },
+  {
+    "candidate_id": "2026-07-28:460613:corners_10.5:Under",
+    "match_id": "460613",
+    "date": "2026-07-28",
+    "competition": "ASEAN Championship",
+    "home_team": "Malaysia",
+    "away_team": "Laos",
+    "market_id": "corners_10.5",
+    "market_name": "Over/Under 10.5 Corners",
+    "selection": "Under",
+    "line": "10.5",
+    "engine_raw_probability": 0.9574,
+    "engine_confidence": 95.74,
+    "track_a": {
+      "final_confidence": 95.74,
+      "decision": "PUBLISH",
+      "rejection_reason": null,
+      "stake": 1.5,
+      "adjustments": [
+        "History: insufficient sample (0/10) \u2014 not used"
+      ]
+    },
+    "track_b": null,
+    "is_production_candidate": false,
+    "actually_published_production": false,
+    "would_be_top5_engine_only": false,
+    "odds": null,
+    "result": "PENDING",
+    "settled_at": null,
+    "engine_version": "engine-v1",
+    "confidence_version": "confidence-v1",
+    "claude_validator_version": "validator-v1",
+    "feature_snapshot": {
+      "exp_goals_home": 3.85,
+      "exp_goals_away": 0.5,
+      "total_exp_goals": 4.35,
+      "goal_diff_edge": 3.35,
+      "exp_corners": 6.0,
+      "exp_cards": 4.0,
+      "home_cs_rate": 0.0,
+      "away_cs_rate": 0.0,
+      "home_possession": 53.0,
+      "away_possession": 30.0
+    },
+    "evidence": {
+      "schema_version": "evidence-v1",
+      "source": "slipscan_python_engine",
+      "model": "independent_poisson",
+      "data_basis": "season_or_tournament_averages",
+      "calculation": {
+        "method": "poisson_total_corners_distribution",
+        "inputs": {
+          "exp_corners": 6.0
+        },
+        "line": 10.5,
+        "selection": "Under"
+      },
+      "decision": {
+        "raw_probability": 0.9574,
+        "raw_confidence": 95.74,
+        "rank_by_raw_confidence": 3,
+        "markets_scored": 17,
+        "markets_meeting_minimum_confidence": 9,
+        "minimum_confidence": 65.0,
+        "passed_minimum_confidence": true,
+        "included_by_existing_market_filter": false,
+        "rank_after_existing_market_filter": null,
+        "production_candidate": false
+      },
+      "statements": [
+        "The feature model estimated 6.000 total corners.",
+        "The evaluated selection was Under 10.5.",
+        "The rule engine assigned this selection a raw probability of 0.9574 (95.74%).",
+        "It ranked 3 of 17 scored markets by raw confidence.",
+        "It passed the configured 65.00% minimum-confidence threshold.",
+        "It was not returned by the existing market filter for production consideration."
+      ]
+    },
+    "logged_at": "2026-07-28T04:03:58.071641+00:00"
   }
 ]
